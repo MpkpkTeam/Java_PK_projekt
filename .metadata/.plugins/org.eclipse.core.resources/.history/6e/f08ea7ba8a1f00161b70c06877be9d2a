@@ -1,0 +1,8 @@
+package destinations;
+
+public class Main {
+	public static void main(String[] argv) {
+		Airport lotnisko=new Airport("WAW", "Chopina", "Warsaw", "Poland");
+	}
+	
+}
