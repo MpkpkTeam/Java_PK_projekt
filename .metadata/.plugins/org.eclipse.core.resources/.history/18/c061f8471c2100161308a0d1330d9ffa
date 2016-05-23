@@ -1,0 +1,17 @@
+package booking;
+
+//singleton design pattern
+
+public class Database {
+	
+	private static Database instance;
+	
+	private Database(){
+		//nothing to do
+	}
+	
+	public static Database getInstance(){
+		if(instance==null) instance=new Database();
+		return instance;
+	}
+}

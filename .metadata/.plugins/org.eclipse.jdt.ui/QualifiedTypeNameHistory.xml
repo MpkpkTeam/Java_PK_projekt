@@ -20,4 +20,10 @@
 <fullyQualifiedTypeName name="booking.RateUSD"/>
 <fullyQualifiedTypeName name="java.math.BigDecimal"/>
 <fullyQualifiedTypeName name="java.math.RoundingMode"/>
+<fullyQualifiedTypeName name="booking.Database"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="javax.security.auth.login.CredentialException"/>
+<fullyQualifiedTypeName name="booking.Ticket"/>
+<fullyQualifiedTypeName name="booking.Flight"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

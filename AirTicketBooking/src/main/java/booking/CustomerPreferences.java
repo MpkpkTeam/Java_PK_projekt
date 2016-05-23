@@ -28,5 +28,4 @@ public class CustomerPreferences {
 	public void setTypeOfTicket(int typeOfTicket) {
 		this.typeOfTicket = typeOfTicket;
 	}
-	
 }

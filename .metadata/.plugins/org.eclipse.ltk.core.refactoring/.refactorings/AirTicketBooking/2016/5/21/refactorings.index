@@ -1,2 +1,8 @@
 1464027174540	Delete element
 1464027411030	Encapsulate field 'typeOfTicket'
+1464031774402	Delete element
+1464031999282	Encapsulate field 'name'
+1464032005966	Encapsulate field 'surname'
+1464032013701	Encapsulate field 'dateOfBirth'
+1464032261429	Encapsulate field 'street'
+1464032270992	Encapsulate field 'country'

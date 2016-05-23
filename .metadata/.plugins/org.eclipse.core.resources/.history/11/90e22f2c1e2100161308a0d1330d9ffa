@@ -1,0 +1,7 @@
+package booking;
+
+//design pattern factory
+
+public interface Ticket {
+	void createTicket();
+}
