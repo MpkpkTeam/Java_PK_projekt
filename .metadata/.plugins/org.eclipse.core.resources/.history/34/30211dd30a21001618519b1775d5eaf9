@@ -1,0 +1,17 @@
+package booking;
+
+public class ChooseCurrency {
+	ExchangeRates choose(CustomerPreferences pref){
+		if(pref.getCurrency()==1){
+			return new RateUSD();
+		}
+		else if(pref.getCurrency()==2){
+			return new RateGBP();
+		}
+		else if(pref.getCurrency()==3){
+			return new RateEUR();
+		}
+		
+		return null;
+	}
+}

@@ -1,0 +1,9 @@
+package booking;
+
+public class Main {
+	private static Airport lotnisko;
+
+	public static void main(String[] argv) {
+		lotnisko = new Airport("WAW", "Chopina 1", "Warsaw", "Poland");
+	}
+}

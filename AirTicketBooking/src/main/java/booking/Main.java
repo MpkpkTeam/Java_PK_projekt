@@ -1,7 +1,11 @@
 package booking;
 
+import java.math.BigDecimal;
+
 public class Main {
 	public static void main(String[] argv) {
-		Airport lotnisko=new Airport("WAW", "Chopina 1", "Warsaw", "Poland");
+		CustomerPreferences pref=new CustomerPreferences();
+		pref.setCurrencyNumber(3);
+		System.out.println(new ChooseConvert().choose(pref).convert(new BigDecimal("400")));
 	}
 }

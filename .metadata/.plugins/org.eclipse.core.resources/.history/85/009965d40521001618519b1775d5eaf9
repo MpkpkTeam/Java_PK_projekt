@@ -1,0 +1,19 @@
+package booking;
+
+public class Airport {
+	//International Air Transport Association airport code
+	private String IATA;
+	//Adress
+	private String street;
+	private String city;
+	private String country;
+	//type of the airport
+	//1 international
+	//2 domestic
+	private int type;
+	
+	public Airport(String _IATA,String _street,String _city,String _country,int _type) {
+		IATA=_IATA;
+		
+	}
+}

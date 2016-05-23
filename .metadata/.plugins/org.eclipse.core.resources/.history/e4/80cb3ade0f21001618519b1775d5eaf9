@@ -1,0 +1,8 @@
+package booking;
+
+public class Main {
+	public static void main(String[] argv) {
+		Airport lotnisko=new Airport("WAW", "Chopina 1", "Warsaw", "Poland");
+		System.out.println(lotnisko.getCity());
+	}
+}

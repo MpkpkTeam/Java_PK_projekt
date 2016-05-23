@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="destinations.Airport"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.Currency"/>
 <fullyQualifiedTypeName name="booking.Airport"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="booking.ExchangeRates"/>
+<fullyQualifiedTypeName name="booking.ChooseCurrency"/>
+<fullyQualifiedTypeName name="booking.ToPLN"/>
+<fullyQualifiedTypeName name="booking.ToUSD"/>
+<fullyQualifiedTypeName name="booking.ToGBP"/>
+<fullyQualifiedTypeName name="booking.CashConvert"/>
+<fullyQualifiedTypeName name="booking.ChooseConvert"/>
+<fullyQualifiedTypeName name="booking.CustomerPreferences"/>
+<fullyQualifiedTypeName name="booking.ToEUR"/>
+<fullyQualifiedTypeName name="booking.RateEUR"/>
+<fullyQualifiedTypeName name="booking.RateGBP"/>
+<fullyQualifiedTypeName name="booking.RatePLN"/>
+<fullyQualifiedTypeName name="booking.RateUSD"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="java.math.RoundingMode"/>
 </qualifiedTypeNameHistroy>

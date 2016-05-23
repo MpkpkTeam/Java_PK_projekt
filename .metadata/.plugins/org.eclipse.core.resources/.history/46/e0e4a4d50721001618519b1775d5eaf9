@@ -1,0 +1,17 @@
+package booking;
+
+public class Flight {
+	private String flightNumber;
+	private Airport to;
+	private Airport from;
+	
+	public Flight(String flightNumber,Airport to,Airport from) {
+		this.flightNumber=flightNumber;
+		this.to=to;
+		this.from=from;
+	}
+	
+	getFlightNumber(){
+		return flightNumber;
+	}
+}

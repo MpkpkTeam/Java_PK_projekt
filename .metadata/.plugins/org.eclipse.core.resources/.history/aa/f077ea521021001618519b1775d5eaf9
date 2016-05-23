@@ -1,0 +1,9 @@
+package booking;
+
+import java.math.BigDecimal;
+
+public class ToGBP implements CashConvert{
+	public BigDecimal convert(BigDecimal money,CustomerPreferences pref) {
+		return money.divide(new ChooseCurrency().choose(pref).getRate());
+	}
+}

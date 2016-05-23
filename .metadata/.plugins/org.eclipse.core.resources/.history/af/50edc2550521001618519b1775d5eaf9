@@ -1,0 +1,10 @@
+package booking;
+
+import java.math.BigDecimal;
+
+public class ToEUR implements CashConvert{
+	public BigDecimal convert(BigDecimal money) {
+		RateEUR eur=new RateEUR();
+		return money.divide(eur.getRate());
+	}
+}
