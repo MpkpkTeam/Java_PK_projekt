@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuController {
-	MenuView view;
-	MenuModel model;
+	MenuView view=new MenuView();
+	MenuModel model=new MenuModel();
 	
 	public MenuController(MenuView view,MenuModel model) {
 		this.view=view;

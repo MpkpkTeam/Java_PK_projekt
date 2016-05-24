@@ -10,7 +10,13 @@ public class Main {
 		Database database=Database.getInstance();
 		new InitAirports().init();
 		new InitFlights().init();
-
-		MenuController controller=new MenuController(new MenuView(), new MenuModel());
+		
+		for(Flight tmp:database.getFlightsList()){
+			System.out.println(tmp.viewFlight());
+		}
+		
+		MenuView view=new MenuView();
+		MenuModel model=new MenuModel();
+		MenuController controller=new MenuController(view, model);
 	}
 }
