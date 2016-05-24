@@ -11,6 +11,7 @@ public class CustomerPreferences {
 	//					1 - Economy Plus Class
 	//					2 - Business Class
 	private int typeOfTicket=0;
+	private int ticketAmount=0;
 	
 	
 	public int getCurrencyNumber() {
@@ -27,5 +28,13 @@ public class CustomerPreferences {
 
 	public void setTypeOfTicket(int typeOfTicket) {
 		this.typeOfTicket = typeOfTicket;
+	}
+
+	public int getTicketAmount() {
+		return ticketAmount;
+	}
+
+	public void setTicketAmount(int ticketAmount) {
+		this.ticketAmount = ticketAmount;
 	}
 }

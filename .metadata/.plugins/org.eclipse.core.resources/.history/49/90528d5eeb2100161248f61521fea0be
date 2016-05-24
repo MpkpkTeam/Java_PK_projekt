@@ -1,0 +1,71 @@
+package booking;
+
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class MenuView extends JFrame{
+	private JPanel mainPanel;
+	private JPanel aPanel; // this panel is in mainPanel
+	private JPanel bPanel;  // this panel is in aPanel
+	private JPanel cPanel; // this panel is in aPanel
+	
+	private JLabel headerText;
+	private JRadioButton directSearchButton;
+	private JRadioButton availableDestinationsButton;
+	private JRadioButton possiblyAirportsToDestinationButton;
+	private JButton selectButton;
+	private ButtonGroup buttonGroup;
+	
+	public MenuView() {
+		this.setSize(300, 300);
+		layoutConfig();
+		
+		JLabel headerText=new JLabel("Select a way of booking a tickets:");
+		availableDestinationsButton=new JRadioButton("Search for a available destinations");
+		possiblyAirportsToDestinationButton=new JRadioButton("Search a start airport for your destination");
+		selectButton=new JButton("Select");
+		buttonGroup=new ButtonGroup();
+		
+		directSearchButton=new JRadioButton("Select a direct connections");
+		buttonGroup.add(directSearchButton);
+		buttonGroup.add(availableDestinationsButton);
+		buttonGroup.add(possiblyAirportsToDestinationButton);
+		
+		bPanel.add(headerText);
+		cPanel.add(directSearchButton);
+		cPanel.add(availableDestinationsButton);
+		cPanel.add(possiblyAirportsToDestinationButton);
+		cPanel.add(selectButton);
+		
+		aPanel.add(bPanel);
+		aPanel.add(cPanel);
+		mainPanel.add(aPanel);
+		
+		this.add(mainPanel);
+		
+		this.setVisible(true);
+	}
+	
+	private void layoutConfig(){
+		mainPanel=new JPanel();
+		aPanel=new JPanel();
+		bPanel=new JPanel();
+		cPanel=new JPanel();
+		
+		GridLayout aPanelLayout=new GridLayout(2, 1);
+		FlowLayout bPanelLayout=new FlowLayout();
+		GridLayout cPanelLayout=new GridLayout(5, 1);
+		
+		aPanel.setLayout(aPanelLayout);
+		bPanel.setLayout(bPanelLayout);
+		cPanel.setLayout(cPanelLayout);
+
+	}
+}

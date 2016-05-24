@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="destinations.Airport"/>
 <fullyQualifiedTypeName name="java.util.Currency"/>
-<fullyQualifiedTypeName name="booking.Airport"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="booking.ExchangeRates"/>
@@ -20,10 +19,29 @@
 <fullyQualifiedTypeName name="booking.RateUSD"/>
 <fullyQualifiedTypeName name="java.math.BigDecimal"/>
 <fullyQualifiedTypeName name="java.math.RoundingMode"/>
-<fullyQualifiedTypeName name="booking.Database"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="javax.security.auth.login.CredentialException"/>
-<fullyQualifiedTypeName name="booking.Ticket"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.DATA_CONVERSION"/>
+<fullyQualifiedTypeName name="booking.Database"/>
+<fullyQualifiedTypeName name="booking.Airport"/>
 <fullyQualifiedTypeName name="booking.Flight"/>
+<fullyQualifiedTypeName name="booking.InitAirports"/>
+<fullyQualifiedTypeName name="booking.InitFlights"/>
+<fullyQualifiedTypeName name="booking.Ticket"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="booking.MenuView"/>
+<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+<fullyQualifiedTypeName name="java.awt.LayoutManager"/>
+<fullyQualifiedTypeName name="javax.swing.JRadioButton"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicBorders.RadioButtonBorder"/>
+<fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+<fullyQualifiedTypeName name="javax.swing.Box"/>
+<fullyQualifiedTypeName name="java.awt.Dimension"/>
+<fullyQualifiedTypeName name="javax.swing.BoxLayout"/>
+<fullyQualifiedTypeName name="java.awt.GridLayout"/>
 </qualifiedTypeNameHistroy>

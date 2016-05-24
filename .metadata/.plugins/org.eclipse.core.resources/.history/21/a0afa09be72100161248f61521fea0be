@@ -1,0 +1,45 @@
+package booking;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.JRadioButton;
+import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class MenuView extends JFrame{
+	private JLabel headerText=new JLabel("Choose the way of ticket booking:");
+	private JRadioButton directSearchButton=new JRadioButton("Select a direct connections");
+	private JRadioButton availableDestinationsButton=new JRadioButton("Search for a available destinations");
+	private JRadioButton possiblyAirportsToDestinationButton=new JRadioButton("Search a start airport for your destination");
+	private ButtonGroup buttonGroup=new ButtonGroup();
+	
+	public MenuView() {
+		this.setSize(600, 600);
+		JPanel menuPanel=new JPanel();
+		JPanel menuPanelTop=new JPanel();
+		FlowLayout flowLayout=new FlowLayout();
+		flowLayout.setVgap(50);
+		menuPanelTop.setLayout(flowLayout);
+		menuPanel.setLayout(new BoxLayout(menuPanel, BoxLayout.Y_AXIS));
+		
+		buttonGroup.add(directSearchButton);
+		buttonGroup.add(availableDestinationsButton);
+		buttonGroup.add(possiblyAirportsToDestinationButton);
+		
+		menuPanelTop.add(headerText,FlowLayout.CENTER);
+		menuPanel.add(directSearchButton);
+		menuPanel.add(availableDestinationsButton);
+		menuPanel.add(possiblyAirportsToDestinationButton);
+		
+		this.add(menuPanelTop);
+		this.add(menuPanel);
+		
+		this.setVisible(true);
+	}
+}
