@@ -1,0 +1,8 @@
+package booking;
+
+public class MenuModel {
+	MenuView view=new MenuView();
+	public MenuModel() {
+		// TODO Auto-generated constructor stub
+	}
+}

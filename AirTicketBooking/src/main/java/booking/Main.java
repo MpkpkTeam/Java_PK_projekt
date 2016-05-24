@@ -15,6 +15,8 @@ public class Main {
 			System.out.println(tmp.viewFlight());
 		}
 		
-		new MenuView();
+		MenuView view=new MenuView();
+		MenuModel model=new MenuModel();
+		MenuController controller=new MenuController(view, model);
 	}
 }

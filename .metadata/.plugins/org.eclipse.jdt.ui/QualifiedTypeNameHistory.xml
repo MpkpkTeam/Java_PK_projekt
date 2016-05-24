@@ -24,12 +24,10 @@
 <fullyQualifiedTypeName name="org.omg.CORBA.DATA_CONVERSION"/>
 <fullyQualifiedTypeName name="booking.Database"/>
 <fullyQualifiedTypeName name="booking.Airport"/>
-<fullyQualifiedTypeName name="booking.Flight"/>
 <fullyQualifiedTypeName name="booking.InitAirports"/>
 <fullyQualifiedTypeName name="booking.InitFlights"/>
 <fullyQualifiedTypeName name="booking.Ticket"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="booking.MenuView"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 <fullyQualifiedTypeName name="java.awt.LayoutManager"/>
 <fullyQualifiedTypeName name="javax.swing.JRadioButton"/>
@@ -44,4 +42,11 @@
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="javax.swing.BoxLayout"/>
 <fullyQualifiedTypeName name="java.awt.GridLayout"/>
+<fullyQualifiedTypeName name="booking.Flight"/>
+<fullyQualifiedTypeName name="java.awt.Frame"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="booking.MenuController.MenuSelectButtonListener"/>
+<fullyQualifiedTypeName name="booking.MenuView"/>
+<fullyQualifiedTypeName name="booking.MenuModel"/>
+<fullyQualifiedTypeName name="booking.MenuController"/>
 </qualifiedTypeNameHistroy>
