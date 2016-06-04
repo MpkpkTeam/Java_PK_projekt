@@ -1,7 +1,0 @@
-package booking;
-
-public class InitAirports {
-	void init(){
-		Database database=Database.getInstance();
-	}
-}

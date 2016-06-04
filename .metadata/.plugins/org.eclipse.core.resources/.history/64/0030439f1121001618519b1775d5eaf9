@@ -1,9 +1,0 @@
-package booking;
-
-import java.math.BigDecimal;
-
-public class ToPLN implements CashConvert{
-	public BigDecimal convert(BigDecimal money) {
-		return money.divide(new RatePLN().getRate());
-	}
-}

@@ -1,9 +1,0 @@
-package booking;
-
-import java.math.BigDecimal;
-
-public class ToUSD implements CashConvert{
-	public BigDecimal convert(BigDecimal money) {
-		return null;
-	}
-}

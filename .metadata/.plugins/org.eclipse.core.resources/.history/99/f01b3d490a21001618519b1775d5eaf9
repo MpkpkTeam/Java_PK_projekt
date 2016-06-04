@@ -1,7 +1,0 @@
-package booking;
-
-public class ChooseCurrency {
-	public ChooseCurrency() {
-		
-	}
-}

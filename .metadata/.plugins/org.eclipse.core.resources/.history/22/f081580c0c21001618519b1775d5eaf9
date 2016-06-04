@@ -1,8 +1,0 @@
-package booking;
-
-import java.math.BigDecimal;
-
-public class ToEUR implements CashConvert{
-	public BigDecimal conver);
-	}
-}

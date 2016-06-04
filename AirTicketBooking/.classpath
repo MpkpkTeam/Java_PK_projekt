@@ -32,5 +32,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/KAMIL/Desktop/Projekt_JAVA/AirTicketBooking/src/main/resources/miglayout-4.0-swing.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

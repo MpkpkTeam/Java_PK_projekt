@@ -1,8 +1,0 @@
-package booking;
-
-public class InitFlights {
-	void init(){
-		Database database=Database.getInstance();
-		database.getFlightsList().add(new Flight("1", database.getAirportsList().get(0), database.getAirportsList().get(3)));
-	}
-}
