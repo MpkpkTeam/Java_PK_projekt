@@ -6,19 +6,24 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="bookButton" key="selection"/>
+		<item value="airportList" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="database.getAirportsList()"/>
+			<item value="database.getAirportList()"/>
+			<item value="database.getFlightsList().add(new Flight(&quot;1&quot;, database.getAirportsList().get(0), database.getAirportsList().get(1)));"/>
+			<item value="System"/>
+			<item value="System.ou"/>
 			<item value="submitButton"/>
 			<item value="radioButtonGroup"/>
 			<item value="Column"/>
-			<item value="aPanel"/>
-			<item value="cPanel"/>
 		</list>
 		<list key="replacehistory">
+			<item value="airportList"/>
+			<item value="flightsList"/>
 			<item value="bookButton"/>
 			<item value="searchChoiceButtonGroup"/>
 			<item value="Row"/>
@@ -29,7 +34,7 @@
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="381" key="DIALOG_HEIGHT"/>
-		<item value="943" key="DIALOG_X_ORIGIN"/>
-		<item value="230" key="DIALOG_Y_ORIGIN"/>
+		<item value="751" key="DIALOG_X_ORIGIN"/>
+		<item value="467" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

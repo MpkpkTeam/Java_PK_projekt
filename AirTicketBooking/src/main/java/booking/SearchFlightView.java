@@ -48,9 +48,6 @@ public class SearchFlightView extends JFrame{
 	private JList<String> resultsTable;
 	private JScrollPane resultsScrollPanel;
 	
-	Object[][] data={{"a","a","a"},{"b","b","b"},{"c","c","c"}}; //for testing
-	String[] columnNames={"a","b","c"};	//for testing
-	
 	public SearchFlightView() {
 		this.setTitle("Air Ticket Booking");
 		this.setLocationRelativeTo(null);
@@ -146,7 +143,6 @@ public class SearchFlightView extends JFrame{
 		mainPanel.add(searchButton,"wrap");
 		
 		mainPanel.add(resultsScrollPanel,"wrap");
-		//mainPanel.add(resultsTable,"wrap");
 		mainPanel.add(bookButton);
 	}
 	
@@ -154,7 +150,7 @@ public class SearchFlightView extends JFrame{
 		return from.getText();
 	}
 	
-	String getEndtAirport(){
+	String getEndAirport(){
 		return to.getText();
 	}
 	
@@ -212,5 +208,9 @@ public class SearchFlightView extends JFrame{
 	
 	void addResult(String element){
 		listModel.addElement(element);
+	}
+	
+	int choosenFlight(){
+		return resultsTable.getSelectedIndex();
 	}
 }

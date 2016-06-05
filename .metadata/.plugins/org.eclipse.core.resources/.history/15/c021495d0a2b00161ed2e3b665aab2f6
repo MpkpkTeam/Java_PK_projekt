@@ -1,0 +1,67 @@
+package booking;
+
+import java.util.ArrayList;
+
+//singleton design pattern
+
+public class Database {
+
+	private static Database instance;
+	
+	private static ArrayList<Flight> flightsList;
+	private static ArrayList<Airport> airportsList;
+	private static ArrayList<Ticket> ticketsList;
+	private static ArrayList<Flight> resultList;
+	
+	private Database(){
+		flightsList=new ArrayList<Flight>();
+		airportsList=new ArrayList<Airport>();
+		ticketsList=new ArrayList<Ticket>();
+		resultList=new ArrayList<Flight>();
+	}
+
+	public static Database getInstance(){
+		if(instance==null) instance=new Database();
+		return instance;
+	}
+
+	public ArrayList<Flight> getFlightsList() {
+		return flightsList;
+	}
+
+	public void setFlightsList(ArrayList<Flight> flightsList) {
+		Database.flightsList = flightsList;
+	}
+
+	public ArrayList<Airport> getAirportsList() {
+		return airportsList;
+	}
+
+	public void setAirportsList(ArrayList<Airport> airportsList) {
+		Database.airportsList = airportsList;
+	}
+
+	public ArrayList<Ticket> getTicketsList() {
+		return ticketsList;
+	}
+
+	public void setTicketsList(ArrayList<Ticket> ticketsList) {
+		Database.ticketsList = ticketsList;
+	}
+
+	public ArrayList<Flight> getResultList() {
+		return resultList;
+	}
+
+	public void setResultList(ArrayList<Flight> resultList) {
+		Database.resultList = resultList;
+	}
+	
+	void addAirport(Airport airport){
+		airportsList.add(airport);
+	}
+	
+	void addFlight(Flight flight){
+		flightsList.add(flight);
+	}
+}

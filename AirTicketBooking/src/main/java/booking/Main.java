@@ -1,16 +1,14 @@
 package booking;
 
 public class Main {
-	public static void main(String[] argv) {
-		/*CustomerPreferences pref=new CustomerPreferences();
-		pref.setCurrencyNumber(3);
-		System.out.println(new ChooseConvert().choose(pref).convert(new BigDecimal("400")));
-		new InitAirports().init();
-		new InitFlights().init();
-
-		new MenuController(new MenuView(), new MenuModel());
-		*/
+	public static void main(String[] argv) {		
+		Database db=Database.getInstance();
 		
-		new SearchFlightController(new SearchFlightView(), new SearchFlightModel());
+		System.out.println(db.getAirportsList().size());
+		
+		SearchFlightView view=new SearchFlightView();
+		SearchFlightModel model=new SearchFlightModel();
+		
+		new SearchFlightController(view, model);
 	}
 }
