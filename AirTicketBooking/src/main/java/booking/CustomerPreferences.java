@@ -1,25 +1,38 @@
 package booking;
 
+//singleton design pattern
+
 public class CustomerPreferences {
+	
+	private static CustomerPreferences instance;
+	
 	//	default currency 0 - PLN
 	//					 1 - USD
 	//					 2 - GBP
 	//					 3 - EUR
-	private int currency=0;
+	private static int currency=0;
 
 	//	type of ticket	0 - Economy Class
 	//					1 - Economy Plus Class
 	//					2 - Business Class
-	private int typeOfTicket=0;
-	private int ticketAmount=0;
+	private static int typeOfTicket=0;
+	private static int ticketAmount=0;
 	
+	private CustomerPreferences(){
+		//do nothing
+	}
+	
+	public static CustomerPreferences getInstance(){
+		if(instance==null) instance=new CustomerPreferences();
+		return instance;
+	}
 	
 	public int getCurrencyNumber() {
 		return currency;
 	}
 	
 	public void setCurrencyNumber(int currency) {
-		this.currency = currency;
+		CustomerPreferences.currency = currency;
 	}
 
 	public int getTypeOfTicket() {
@@ -27,7 +40,7 @@ public class CustomerPreferences {
 	}
 
 	public void setTypeOfTicket(int typeOfTicket) {
-		this.typeOfTicket = typeOfTicket;
+		CustomerPreferences.typeOfTicket = typeOfTicket;
 	}
 
 	public int getTicketAmount() {
@@ -35,6 +48,6 @@ public class CustomerPreferences {
 	}
 
 	public void setTicketAmount(int ticketAmount) {
-		this.ticketAmount = ticketAmount;
+		CustomerPreferences.ticketAmount = ticketAmount;
 	}
 }
