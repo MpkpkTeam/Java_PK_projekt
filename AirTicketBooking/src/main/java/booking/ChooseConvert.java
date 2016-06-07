@@ -3,17 +3,17 @@ package booking;
 //strategy design pattern
 
 public class ChooseConvert {
-	CashConvert choose(CustomerPreferences pref){
-		if(pref.getCurrencyNumber()==0){
+	CashConvert choose(int pref){
+		if(pref==0){
 			return new ToPLN();
 		}
-		else if(pref.getCurrencyNumber()==1){
+		else if(pref==1){
 			return new ToUSD();
 		}
-		else if(pref.getCurrencyNumber()==2){
+		else if(pref==2){
 			return new ToGBP();
 		}
-		else if(pref.getCurrencyNumber()==3){
+		else if(pref==3){
 			return new ToEUR();
 		}
 		else{

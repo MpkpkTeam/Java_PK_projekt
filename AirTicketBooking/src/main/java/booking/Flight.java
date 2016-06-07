@@ -1,5 +1,7 @@
 package booking;
 
+import java.math.BigDecimal;
+
 public class Flight {
 	private String flightNumber;
 	private Airport to;
@@ -9,12 +11,17 @@ public class Flight {
 	//			0 - Economy Class
 	//			1 - Economy Plus Class
 	//			2 - Business Class
-	private int[] pricing=new int[3];
+	private BigDecimal[] pricing=new BigDecimal[3];
 	
-	public Flight(String flightNumber,Airport to,Airport from) {
+	public Flight(String flightNumber,Airport to,Airport from,BigDecimal economyPrice,
+				BigDecimal economyPlusPrice,BigDecimal businessPrice) {
 		this.flightNumber=flightNumber;
 		this.to=to;
 		this.from=from;
+		
+		this.pricing[0]=economyPrice;
+		this.pricing[1]=economyPlusPrice;
+		this.pricing[2]=businessPrice;
 	}
 	
 	public String getFlightNumber(){
@@ -29,15 +36,18 @@ public class Flight {
 		return from;
 	}
 	
-	public String viewFlight(){
-		return "From "+this.from.getCity()+"("+this.from.getIATA()+")"+","+this.from.getCountry()+" to "+this.to.getCity()+"("+this.to.getIATA()+")"+","+this.to.getCountry();
+	public String viewFlight(int currencyNumber,BigDecimal money){
+				return "From "+this.from.getCity()+"("+this.from.getIATA()+")"+","+this.from.getCountry()+" to "+
+				this.to.getCity()+"("+this.to.getIATA()+")"+","+this.to.getCountry()+" "+
+				new ChooseConvert().choose(currencyNumber).convert(money).toString()+" "+
+				new ChooseCurrencyName().get(currencyNumber);
 	}
 
-	public int[] getPricing() {
+	public BigDecimal[] getPricing() {
 		return pricing;
 	}
 
-	public void setPricing(int[] pricing) {
+	public void setPricing(BigDecimal[] pricing) {
 		this.pricing = pricing;
 	}
 }

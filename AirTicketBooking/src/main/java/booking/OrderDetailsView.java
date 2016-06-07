@@ -42,6 +42,8 @@ public class OrderDetailsView extends JFrame{
 	public OrderDetailsView() {
 		
 		setTitle("Orded details:");
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setLocationRelativeTo(null);
 		
 		elementsConfig();
 		layoutConfig();
@@ -92,7 +94,7 @@ public class OrderDetailsView extends JFrame{
 		mainPanel.add(fromAirportText);
 		mainPanel.add(toText);
 		mainPanel.add(toAirportText,"wrap");
-		mainPanel.add(priceText,"split 1");
+		mainPanel.add(priceText,"split 2");
 		mainPanel.add(ticketPriceText,"wrap");
 		mainPanel.add(printButton);
 	}
@@ -128,6 +130,14 @@ public class OrderDetailsView extends JFrame{
 	
 	void setToAirport(String airp){
 		toAirportText.setText(airp);
+	}
+	
+	void setPrice(String price){
+		ticketPriceText.setText(price);
+	}
+	
+	String getPrice(){
+		return ticketPriceText.getText();
 	}
 	
 	void addPrintButtonActionListener(ActionListener listener){

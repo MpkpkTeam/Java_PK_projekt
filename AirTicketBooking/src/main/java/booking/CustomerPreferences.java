@@ -16,7 +16,7 @@ public class CustomerPreferences {
 	//					1 - Economy Plus Class
 	//					2 - Business Class
 	private static int typeOfTicket=0;
-	private static int ticketAmount=0;
+	private static int choosenFlight;
 	
 	private CustomerPreferences(){
 		//do nothing
@@ -43,11 +43,11 @@ public class CustomerPreferences {
 		CustomerPreferences.typeOfTicket = typeOfTicket;
 	}
 
-	public int getTicketAmount() {
-		return ticketAmount;
+	public int getChoosenFlight() {
+		return choosenFlight;
 	}
 
-	public void setTicketAmount(int ticketAmount) {
-		CustomerPreferences.ticketAmount = ticketAmount;
+	public void setChoosenFlight(int choosenFlight) {
+		CustomerPreferences.choosenFlight = choosenFlight;
 	}
 }

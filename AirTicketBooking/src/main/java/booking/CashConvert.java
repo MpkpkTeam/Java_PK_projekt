@@ -7,4 +7,5 @@ import java.math.BigDecimal;
 //this interface declares a method for converting currency
 public interface CashConvert {
 	BigDecimal convert(BigDecimal money);
+	String getName();
 }

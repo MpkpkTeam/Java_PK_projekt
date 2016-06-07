@@ -2,6 +2,7 @@ package booking;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 
 
 public class SearchFlightController {
@@ -12,7 +13,7 @@ public class SearchFlightController {
 	Database database;
 	CustomerPreferences pref;
 
-	public SearchFlightController(SearchFlightView view,SearchFlightModel model) {
+	public SearchFlightController(SearchFlightView view,SearchFlightModel model) throws FileNotFoundException {
 		this.view=view;
 		this.model=model;
 		
@@ -48,7 +49,7 @@ public class SearchFlightController {
 			else if(view.isSelectedGbpOption()){
 				pref.setCurrencyNumber(2);
 			}
-			else if(view.isSelectedGbpOption()){
+			else if(view.isSelectedEurOption()){
 				pref.setCurrencyNumber(3);
 			}
 			
@@ -69,7 +70,9 @@ public class SearchFlightController {
 			view.clearResults();
 			
 			for(int i=0;i<database.getResultList().size();i++){
-				view.addResult(database.getResultList().get(i).viewFlight());
+				view.addResult(database.getResultList().get(i).
+				viewFlight(pref.getCurrencyNumber(),
+				database.getResultList().get(i).getPricing()[pref.getTypeOfTicket()]));
 			}
 			
 		}
@@ -77,15 +80,29 @@ public class SearchFlightController {
 	
 	class bookButtonListener implements ActionListener{
 
-		public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent e){
+			OrderDetailsModel orderModel=null;
+			OrderDetailsView orderView = null;
 			
-			System.out.println(view.choosenFlight());
-			System.out.println(database.getResultList().get(view.choosenFlight()).viewFlight());
-			System.out.println("Type of ticket"+pref.getTypeOfTicket());
-			System.out.println("Currency:"+pref.getCurrencyNumber());
+			orderModel=new OrderDetailsModel();
+			orderView=new OrderDetailsView();
+
 			
-			new OrderDetailsView();
+			pref.setChoosenFlight(view.choosenFlight());
+			
+			try {
+				new OrderDetailsController(orderView,orderModel);
+			} catch (FileNotFoundException e1) {
+				e1.printStackTrace();
+			}
+			catch (ArrayIndexOutOfBoundsException e2) {
+				orderView.setVisible(false);
+				new MessageBox("Select something !!", "Warning");
+			}
+
 		}
 		
 	}
 }
+
+

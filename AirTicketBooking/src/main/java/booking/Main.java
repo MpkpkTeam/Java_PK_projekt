@@ -1,7 +1,9 @@
 package booking;
 
+import java.io.FileNotFoundException;
+
 public class Main {
-	public static void main(String[] argv) {		
+	public static void main(String[] argv) throws FileNotFoundException {		
 		Database db=Database.getInstance();
 		
 		System.out.println(db.getAirportsList().size());

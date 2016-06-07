@@ -1,9 +1,11 @@
 package booking;
 
+import java.io.FileNotFoundException;
+
 public class SearchFlightModel {
 	Database database;
 	
-	public SearchFlightModel() {
+	public SearchFlightModel() throws FileNotFoundException {
 		database=Database.getInstance();
 	}
 	
