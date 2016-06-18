@@ -1,0 +1,22 @@
+package mpkpk.project.main;
+
+import java.util.ArrayList;
+import mpkpk.project.hotel.*;
+
+public class Hotel {
+	
+	public String Name; // Hotel name
+	
+	ArrayList<Client> clients; // List of clients
+	ArrayList<Reservation> reservations; // List of reservations
+	ArrayList<Room> rooms; // List of rooms
+	
+	public Hotel(String s) // Constructor
+	{
+		Name = s;
+		
+		clients = new ArrayList<Client>();
+		reservations = new ArrayList<Reservation>();
+		rooms = new ArrayList<Room>();
+	}
+}
