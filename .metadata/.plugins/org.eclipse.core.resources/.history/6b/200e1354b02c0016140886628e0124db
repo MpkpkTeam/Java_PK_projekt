@@ -1,0 +1,47 @@
+package booking;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
+public class OrderDetailsController {
+	OrderDetailsView view;
+	OrderDetailsModel model;
+	CustomerPreferences pref;
+	Database database;
+	
+	public OrderDetailsController(OrderDetailsView view,OrderDetailsModel model) {
+		this.view=view;
+		this.model=model;
+		pref=CustomerPreferences.getInstance();
+		database=Database.getInstance();
+		
+		view.setFromAirport(database.getResultList().get(pref.getChoosenFlight()).getFrom().getCity());
+		view.setToAirport(database.getResultList().get(pref.getChoosenFlight()).getTo().getCity());
+		view.setPrice(new ChooseConvert().choose(pref.getTypeOfTicket()).convert(database.getResultList().get(pref.getChoosenFlight()).getPricing()[pref.getTypeOfTicket()]));
+		
+		view.addPrintButtonActionListener(new PrintButtonListener());
+	}
+
+	
+	class PrintButtonListener implements ActionListener{
+
+		public void actionPerformed(ActionEvent e) {
+			int tmp_sex = 0;
+			
+			if(view.isSelectedMale()){
+				tmp_sex=1;
+			}
+			else if(view.isSelectedFemale()){
+				tmp_sex=2;
+			}
+				
+			try {
+				model.printTicket(view.getName(), view.getSurname(),view.getAge() , tmp_sex,database.getResultList().get(pref.getChoosenFlight()).getFrom().getCity(),database.getResultList().get(pref.getChoosenFlight()).getTo().getCity(), database.getResultList().get(pref.getChoosenFlight()).getPricing()[pref.getTypeOfTicket()]);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+		
+	}
+}
