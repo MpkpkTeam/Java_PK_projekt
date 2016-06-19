@@ -1,0 +1,9 @@
+package mpkpk.project.hotel;
+
+interface Room 
+{	
+	public boolean IsOccupied();
+	public boolean SetNumberOfClients(int numberOfClients) throws TooManyClientsException;
+	public int GetId();
+	public int GetCapacity();
+}

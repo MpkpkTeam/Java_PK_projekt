@@ -1,0 +1,22 @@
+package mpkpk.project.hotel;
+
+public class NormalRoom implements Room {
+
+	private int id;
+	private boolean isVip = false;
+	
+	public int GetId() {
+		return id;
+	}
+	public boolean CheckIfVip()
+	{
+		if (isVip)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}

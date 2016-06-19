@@ -1,0 +1,30 @@
+package mpkpk.project.main;
+
+import mpkpk.project.hotel.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Test");
+		
+		//Hotel hotel = new Hotel("TODO Nazwa");
+		
+		
+		Room nowy = new SingleRoom(3, new NormalRoom(new BareRoom()));
+
+		System.out.println(nowy.GetId());
+		System.out.println(nowy.GetCapacity());
+		System.out.println(nowy.IsOccupied());
+		try 
+		{
+			nowy.SetNumberOfClients(1);
+		} 
+		catch (Exception e) 
+		{
+			
+		}
+		System.out.println(nowy.IsOccupied());
+
+
+	}
+}
