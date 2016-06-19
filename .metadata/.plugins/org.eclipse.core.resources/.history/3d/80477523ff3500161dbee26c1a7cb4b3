@@ -1,0 +1,48 @@
+package mpkpk.project.hotel;
+
+public class SingleRoom implements Room {
+	
+	private int id;
+	private int capacity;
+	private int numberOfPeople;
+	
+	public boolean IsOccupied()
+	{
+		if (numberOfPeople == 0)
+		{
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+	}
+
+	public void SetNumberOfClients(int numberOfClients) throws TooManyClientsException {
+		if (numberOfClients < 0)
+		{
+			throw 
+		}
+		else if (numberOfClients <= capacity)
+		{
+			
+		}
+			
+		
+	}
+
+	public int GetId() {
+		return id;
+	}
+
+	public int GetCapacity() {
+		return capacity;
+	}
+
+	public SingleRoom(int id)
+	{
+		this.id = id;
+		capacity = 1;
+		numberOfPeople = 0;
+	}
+}

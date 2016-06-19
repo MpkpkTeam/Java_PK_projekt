@@ -1,0 +1,7 @@
+package mpkpk.project.hotel;
+
+public class NormalRoom implements Room {
+
+	private int id;
+
+}

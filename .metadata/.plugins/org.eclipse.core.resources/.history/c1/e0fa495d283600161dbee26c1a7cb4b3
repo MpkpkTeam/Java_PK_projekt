@@ -1,0 +1,13 @@
+package mpkpk.project.hotel;
+
+public class SingleRoom extends RoomDecorator {
+	
+
+
+	public SingleRoom()
+	{
+		this.id = id;
+		capacity = 1;
+		numberOfPeople = 0;
+	}
+}

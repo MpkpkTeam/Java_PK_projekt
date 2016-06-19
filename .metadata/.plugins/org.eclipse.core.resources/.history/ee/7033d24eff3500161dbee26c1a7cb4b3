@@ -1,0 +1,5 @@
+package mpkpk.project.hotel;
+
+public class LessThanZeroClientsException extends Exception {
+
+}

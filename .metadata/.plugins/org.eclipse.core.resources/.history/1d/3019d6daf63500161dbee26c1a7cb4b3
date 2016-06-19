@@ -1,0 +1,6 @@
+package mpkpk.project.hotel;
+
+interface Room 
+{	
+	
+}
