@@ -1,0 +1,24 @@
+package mpkpk.project.hotel;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Reservation 
+{
+	public Date from;
+	public Date to;
+	
+	ArrayList<Client> clients = new ArrayList<Client>();
+	Room room ;
+	
+	public Reservation(Date from, Date to, ArrayList<Client> clientsToAdd, Room room)
+	{
+		this.from = from;
+		this.to = to;
+		for(Client cl : clientsToAdd)
+		{
+			clients.add(cl);
+		}
+		this.room = room;
+	}
+}

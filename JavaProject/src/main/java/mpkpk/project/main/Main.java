@@ -1,4 +1,5 @@
 package mpkpk.project.main;
+import mpkpk.project.hotel.*;
 
 public class Main {
 
@@ -6,5 +7,9 @@ public class Main {
 		System.out.println("Test");
 		
 		Hotel hotel = new Hotel("TODO Nazwa");
+		
+		
+		
+		
 	}
 }

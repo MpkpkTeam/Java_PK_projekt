@@ -1,0 +1,41 @@
+package mpkpk.project.hotel;
+
+import java.util.ArrayList;
+
+public class FacadeReservation
+{
+	ArrayList<Client> clients; // List of clients
+	ArrayList<Reservation> reservations; // List of reservations
+	ArrayList<Room> rooms; // List of rooms
+	
+	public FacadeReservation(ArrayList<Client> clients, ArrayList<Reservation> reservations, ArrayList<Room> rooms)
+	{
+		this.clients = clients;
+		this.reservations = reservations;
+		this.rooms = rooms;
+	}
+	
+	public void AddReservation()
+	{
+		
+	}
+	public ArrayList<Room> FindEmptyRooms()
+	{
+		return null;
+	}
+	public ArrayList<Room> ListAllRooms()
+	{
+		return null;
+
+	}
+	public ArrayList<Reservation> ListaAllReservation()
+	{
+		return null;
+
+	}
+	public ArrayList<Client> ListAllClients()
+	{
+		return null;
+
+	}
+}

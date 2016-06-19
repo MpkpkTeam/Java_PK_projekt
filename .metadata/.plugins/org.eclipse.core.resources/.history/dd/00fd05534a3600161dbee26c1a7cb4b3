@@ -1,0 +1,58 @@
+package mpkpk.project.hotel;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.sql.*;
+
+public class FacadeReservation
+{
+    private Connection conn;
+    private Statement stat;
+	
+    Class.forName("org.sqlite.JDBC");
+	
+	ArrayList<Client> clients; // List of clients
+	ArrayList<Reservation> reservations; // List of reservations
+	ArrayList<Room> rooms; // List of rooms
+	
+	public FacadeReservation(ArrayList<Client> clients, ArrayList<Reservation> reservations, ArrayList<Room> rooms)
+	{
+		this.clients = clients;
+		this.reservations = reservations;
+		this.rooms = rooms;
+	}
+	
+	public void AddReservation(Date from, Date to, ArrayList<Client> clientsToAdd, Room room)
+	{
+		reservations.add(new Reservation(from, to, clientsToAdd, room));
+		
+		// TODO Add to database
+		
+	}
+	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
+	{
+		ArrayList<Room> ret = new ArrayList<Room>();
+
+		for(Room item: rooms)
+		{
+			if (item.GetCapacity() >= capacity && !item.IsOccupied()) 
+			{
+				ret.add(item);
+			}
+		}
+	
+		return ret;
+	}
+	public ArrayList<Room> ListAllRooms()
+	{
+		return rooms;
+	}
+	public ArrayList<Reservation> ListaAllReservation()
+	{
+		return reservations;
+	}
+	public ArrayList<Client> ListAllClients()
+	{
+		return clients;
+	}
+}

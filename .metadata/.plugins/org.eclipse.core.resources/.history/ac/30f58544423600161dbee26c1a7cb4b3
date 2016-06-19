@@ -1,0 +1,15 @@
+package mpkpk.project.hotel;
+
+import java.util.ArrayList;
+
+public class FacadeReservation
+{
+	public void AddReservation()
+	{
+		
+	}
+	public ArrayList<Room> FindEmptyRooms()
+	{
+		
+	}
+}
