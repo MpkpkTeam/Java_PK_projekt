@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="mpkpk.project.hotel.Client"/>
-<fullyQualifiedTypeName name="mpkpk.project.hotel.Reservation"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="javax.swing.tree.ExpandVetoException"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.LessThanZeroClientsException"/>
 <fullyQualifiedTypeName name="mpkpk.project.hotel.TooManyClientsException"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.VipRoom"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.RoomDecorator"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.NormalRoom"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.SingleRoom"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.FacadeReservation"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.Client"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.DoubleRoom"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.BareRoom"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Locale"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="mpkpk.project.hotel.Reservation"/>
 </qualifiedTypeNameHistroy>
