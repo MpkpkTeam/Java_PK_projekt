@@ -59,7 +59,6 @@ public class FacadeReservation
                 isVip = result.getInt("ISVIP");
                 numberOfPeople = result.getInt("NUMBER_OF_PEOPLE");
 
-                
                 if (isVip == 0) 
                 {
 					if (capacity == 1) 
@@ -202,7 +201,6 @@ public class FacadeReservation
 						tempC = c;
                 		break;
 					}
-                
                 }
                 DateFormat format = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
                 
@@ -221,12 +219,7 @@ public class FacadeReservation
         {
             e.printStackTrace();
         }
-        
-        
-        
-        
 		System.out.println("DONE");
-		
 	}
 	
 	public void AddReservation(Date from, Date to, Client client, int numberOfPeople, Room room)
@@ -257,35 +250,40 @@ public class FacadeReservation
 	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
 	{
 		ArrayList<Room> tempRooms = new ArrayList<Room>();
-		
+        DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
+
 		try 
 		{
 			stat = conn.createStatement();
 
 			for(Room item : rooms)
 			{
-	            ResultSet result = stat.executeQuery("SELECT COUNT(*) FROM RESERVATIONS WHERE ROOM_ID=" + item.GetId() + " AND DATE_FROM > \"" +  + "\" AND DATE_TO < \"" +  + "\" )");
-	            result.next();
-	            if (result.getInt("COUNT(*)") == 0) 
-	            {
-	            	tempRooms.add(item);
-	            }
+				if (item.GetCapacity() >= capacity) 
+				{
+		            ResultSet result = stat.executeQuery("SELECT COUNT(*) FROM RESERVATIONS "
+		            		+ "WHERE ROOM_ID=" + item.GetId() + " AND"
+		            		+ "("
+		            		+ "(DATE_FROM <= \"" + df.format(from) + "\" AND DATE_TO >= \"" + df.format(to) + "\") OR"
+		            		+ "(DATE_FROM >= \"" + df.format(from) + "\" AND DATE_TO <= \"" + df.format(to) + "\") OR"
+		            		+ "(DATE_FROM <= \"" + df.format(to) + "\" AND DATE_FROM >= \"" + df.format(from) + "\") OR"
+		            		+ "(DATE_FROM >= \"" + df.format(from) + "\" AND DATE_TO <= \"" + df.format(to) + "\")"
+		            		+ ")");
+		            		//result.next();
+		            if (result.getInt("COUNT(*)") == 0) 
+		            {
+		            	tempRooms.add(item);
+		            }
+				}
 			}
-			
             
 			stat.close();
 			conn.close();
-			return tempRooms;
 		} 
 		catch (Exception e) 
 		{
-			
+			System.out.println(e.getMessage());
 		}
-		
-		
-		
-		
-		
+		return tempRooms;
 	}
 	public ArrayList<Room> ListAllRooms()
 	{
@@ -300,7 +298,7 @@ public class FacadeReservation
 		return clients;
 	}
 	
-     static Connection connectToDatabase(String dbName) 
+    static Connection connectToDatabase(String dbName) 
      {
         Connection conn = null;
         try 

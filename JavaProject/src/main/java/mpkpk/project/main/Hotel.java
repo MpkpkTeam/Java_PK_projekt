@@ -25,7 +25,7 @@ public class Hotel {
 		
 		facade = new FacadeReservation(clients, reservations, rooms);
 	
-		ArrayList<Room> rrr = facade.FindEmptyRooms(new Date(123), new Date(456), 4);
+		ArrayList<Room> rrr = facade.FindEmptyRooms(new Date(700), new Date(800), 3);
 		for(Room r : rrr)
 		{
 			System.out.print("Capacity: " + r.GetCapacity() + ", ");
@@ -33,9 +33,9 @@ public class Hotel {
 			System.out.println("Is Occupied: " + r.IsOccupied());
 		}
 		
-		facade.AddReservation(new Date(123), new Date(456), clients.get(0), 5, rooms.get(4));
+		//facade.AddReservation(new Date(123), new Date(456), clients.get(0), 5, rooms.get(4));
 		
-		ArrayList<Reservation> qwe = facade.ListaAllReservation();
+		/*ArrayList<Reservation> qwe = facade.ListaAllReservation();
 		for(Reservation r : qwe)
 		{
 			System.out.println("Reservation id: " + r.GetId() + ", Client name: " + r.GetClient().GetName() + ", Pokoj: " + r.GetRoom().GetId());
@@ -47,5 +47,7 @@ public class Hotel {
 			System.out.print("id: " + r.GetId() + ", ");
 			System.out.println("Is Occupied: " + r.IsOccupied());
 		}
+		
+		*/
 	}
 }
