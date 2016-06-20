@@ -24,30 +24,29 @@ public class Hotel {
 		rooms = new ArrayList<Room>();
 		
 		facade = new FacadeReservation(clients, reservations, rooms);
-	
-		ArrayList<Room> rrr = facade.FindEmptyRooms(new Date(700), new Date(800), 3);
+	/*
+		ArrayList<Room> rrr = facade.FindEmptyRooms(new Date(100), new Date(600), 1);
 		for(Room r : rrr)
 		{
 			System.out.print("Capacity: " + r.GetCapacity() + ", ");
 			System.out.print("id: " + r.GetId() + ", ");
 			System.out.println("Is Occupied: " + r.IsOccupied());
 		}
-		
-		//facade.AddReservation(new Date(123), new Date(456), clients.get(0), 5, rooms.get(4));
+		*/
+		//facade.AddReservation(new Date(123), new Date(456), "qwe", "asd", 666, 1, rooms.get(6));
 		
 		/*ArrayList<Reservation> qwe = facade.ListaAllReservation();
 		for(Reservation r : qwe)
 		{
 			System.out.println("Reservation id: " + r.GetId() + ", Client name: " + r.GetClient().GetName() + ", Pokoj: " + r.GetRoom().GetId());
 		}
-		
-		for(Room r : rooms)
+		*/
+		for(Reservation r : reservations)
 		{
-			System.out.print("Capacity: " + r.GetCapacity() + ", ");
 			System.out.print("id: " + r.GetId() + ", ");
-			System.out.println("Is Occupied: " + r.IsOccupied());
+			System.out.println("Room id: " + r.GetRoom().GetId());
 		}
 		
-		*/
+		
 	}
 }
