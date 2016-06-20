@@ -13,7 +13,7 @@ public class Hotel {
 	ArrayList<Reservation> reservations; // List of reservations
 	ArrayList<Room> rooms; // List of rooms
 	
-	FacadeReservation facade;
+	public FacadeReservation facade;
 	
 	public Hotel(String name) // Constructor
 	{
@@ -25,14 +25,14 @@ public class Hotel {
 		
 		facade = new FacadeReservation(clients, reservations, rooms);
 	
-		ArrayList<Room> rrr = facade.FindEmptyRooms(new Date(123), new Date(456), 4);
+/*		ArrayList<Room> rrr = facade.FindEmptyRooms(new Date(123), new Date(456), 4);
 		for(Room r : rrr)
 		{
 			System.out.print("Capacity: " + r.GetCapacity() + ", ");
 			System.out.print("id: " + r.GetId() + ", ");
 			System.out.println("Is Occupied: " + r.IsOccupied());
 		}
-		
+	*/	
 		facade.AddReservation(new Date(123), new Date(456), clients.get(0), 5, rooms.get(4));
 		
 		ArrayList<Reservation> qwe = facade.ListaAllReservation();

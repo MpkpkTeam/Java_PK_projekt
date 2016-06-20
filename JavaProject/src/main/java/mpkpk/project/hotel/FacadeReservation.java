@@ -254,7 +254,7 @@ public class FacadeReservation
 			System.out.println("ERROR");
 		}
 	}
-	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
+/*	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
 	{
 		ArrayList<Room> tempRooms = new ArrayList<Room>();
 		
@@ -272,7 +272,7 @@ public class FacadeReservation
 	            }
 			}
 			
-            
+           
 			stat.close();
 			conn.close();
 			return tempRooms;
@@ -286,7 +286,7 @@ public class FacadeReservation
 		
 		
 		
-	}
+	}*/ 
 	public ArrayList<Room> ListAllRooms()
 	{
 		return rooms;
