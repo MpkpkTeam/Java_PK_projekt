@@ -1,9 +1,0 @@
-package mpkpk.project.hotel;
-
-interface Room 
-{	
-	//public boolean IsOccupied();
-	//public void SetNumberOfClients(int numberOfClients) throws TooManyClientsException, LessThanZeroClientsException;
-	public int GetId();
-	//public int GetCapacity();
-}
