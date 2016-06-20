@@ -1,0 +1,24 @@
+package mpkpk.project.hotel;
+
+public class NormalRoom extends RoomDecorator {
+
+	public NormalRoom(Room decoratedRoom) 
+	{
+		super(decoratedRoom);
+	}
+
+	private boolean isVip = false;
+	
+	public boolean CheckIfVip()
+	{
+		if (isVip)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+}

@@ -1,0 +1,9 @@
+package mpkpk.project.hotel;
+
+interface Room 
+{	
+	public boolean IsOccupied();
+	
+	
+	
+}

@@ -1,0 +1,14 @@
+package mpkpk.project.hotel;
+
+import java.util.Date;
+
+public class Reservation 
+{
+	Date from;
+	Date to;
+	
+	ArrayList<Client> clients = new ArrayList<Client>();
+	
+	
+	
+}

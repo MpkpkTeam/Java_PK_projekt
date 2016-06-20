@@ -1,0 +1,10 @@
+package mpkpk.project.hotel;
+
+public class SingleRoom implements Room {
+
+	public boolean IsOccupied() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

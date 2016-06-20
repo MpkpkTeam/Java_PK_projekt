@@ -1,0 +1,9 @@
+package mpkpk.project.hotel;
+
+interface Room 
+{	
+    //public void rysuj(); // rysuje Okno na ekranie
+    //public String pobierzOpis(); // zwraca opis Okna
+	public boolean IsOccupied();
+	//TODO
+}

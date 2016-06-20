@@ -1,0 +1,18 @@
+package mpkpk.project.hotel;
+
+public abstract class RoomDecorator implements Room{
+	protected Room decoratedRoom;
+	
+	private int id;
+	
+	public RoomDecorator(int id, Room decoratedRoom)
+	{
+        this.decoratedRoom = decoratedRoom;
+        this.id = id;
+	}
+	
+	public int GetId() 
+	{
+		return id;
+	}
+}

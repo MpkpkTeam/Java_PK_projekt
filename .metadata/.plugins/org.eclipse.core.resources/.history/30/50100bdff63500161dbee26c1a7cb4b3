@@ -1,0 +1,10 @@
+package mpkpk.project.hotel;
+
+public abstract class RoomDecorator implements Room{
+	protected Room decoratedRoom;
+	
+	public RoomDecorator(Room decoratedRoom)
+	{
+		super(decoratedRoom);
+	}
+}

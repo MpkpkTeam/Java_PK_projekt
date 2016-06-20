@@ -1,0 +1,42 @@
+package mpkpk.project.hotel;
+
+public class VipRoom implements Room {
+
+	private int id;
+	private int capacity;
+	private int numberOfPeople;
+	
+	public boolean IsOccupied() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void SetNumberOfClients(int numberOfClients) throws TooManyClientsException, LessThanZeroClientsException {
+		if (numberOfClients < 0)
+		{
+			throw new LessThanZeroClientsException("Number of people must be greater than zero");
+		}
+		else if (numberOfClients <= capacity)
+		{
+			numberOfPeople = numberOfClients;
+		}
+		else  	
+		{
+			throw new TooManyClientsException("Too many people in one room");
+		}
+	}
+
+
+	public int GetId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int GetCapacity() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+}
