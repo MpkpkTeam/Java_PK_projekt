@@ -70,6 +70,10 @@ public class RoomReserwationView {
 		
 	}
 	
-	
+	void addShowReserwationsButtonListener(ActionListener listenforShowReserwationsbtn){
+		
+		btnShowReserwations.addActionListener(listenforShowReserwationsbtn);
+		
+	}
 	
 }

@@ -13,7 +13,7 @@ public class Hotel {
 	ArrayList<Reservation> reservations; // List of reservations
 	ArrayList<Room> rooms; // List of rooms
 	
-	FacadeReservation facade;
+	public FacadeReservation facade;
 	
 	public Hotel(String name) throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException // Constructor
 	{
