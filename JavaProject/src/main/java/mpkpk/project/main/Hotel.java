@@ -13,7 +13,7 @@ public class Hotel {
 	ArrayList<Reservation> reservations; // List of reservations
 	ArrayList<Room> rooms; // List of rooms
 	
-	public FacadeReservation facade;
+	FacadeReservation facade;
 	
 	public Hotel(String name) throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException // Constructor
 	{
@@ -24,30 +24,18 @@ public class Hotel {
 		rooms = new ArrayList<Room>();
 		
 		facade = new FacadeReservation(clients, reservations, rooms);
-<<<<<<< HEAD
-	
-/*		ArrayList<Room> rrr = facade.FindEmptyRooms(new Date(123), new Date(456), 4);
-=======
 	/*
 		ArrayList<Room> rrr = facade.FindEmptyRooms(new Date(100), new Date(600), 1);
->>>>>>> ace5cd1736d7a097879e27ab4a9b48eb0d88b3b9
 		for(Room r : rrr)
 		{
 			System.out.print("Capacity: " + r.GetCapacity() + ", ");
 			System.out.print("id: " + r.GetId() + ", ");
 			System.out.println("Is Occupied: " + r.IsOccupied());
 		}
-<<<<<<< HEAD
-	*/	
-		facade.AddReservation(new Date(123), new Date(456), clients.get(0), 5, rooms.get(4));
-		
-		ArrayList<Reservation> qwe = facade.ListaAllReservation();
-=======
 		*/
 		//facade.AddReservation(new Date(123), new Date(456), "qwe", "asd", 666, 1, rooms.get(6));
 		
 		/*ArrayList<Reservation> qwe = facade.ListaAllReservation();
->>>>>>> ace5cd1736d7a097879e27ab4a9b48eb0d88b3b9
 		for(Reservation r : qwe)
 		{
 			System.out.println("Reservation id: " + r.GetId() + ", Client name: " + r.GetClient().GetName() + ", Pokoj: " + r.GetRoom().GetId());

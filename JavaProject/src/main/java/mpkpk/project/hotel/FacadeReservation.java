@@ -191,37 +191,16 @@ public class FacadeReservation
 					}
 				}
 			}
-<<<<<<< HEAD
-<<<<<<< HEAD
-			
-           
-=======
-            
->>>>>>> ace5cd1736d7a097879e27ab4a9b48eb0d88b3b9
-=======
 
->>>>>>> c194238f8fad720e05709345c9998cd7cec33918
 			stat.close();
 		}
 		catch (Exception e)
 		{
 			System.out.println(e.getMessage());
 		}
-<<<<<<< HEAD
-		
-		
-		
-		
-		
-	}
-=======
 		return tempRooms;
 	}
-<<<<<<< HEAD
->>>>>>> ace5cd1736d7a097879e27ab4a9b48eb0d88b3b9
-=======
 
->>>>>>> c194238f8fad720e05709345c9998cd7cec33918
 	public ArrayList<Room> ListAllRooms()
 	{
 		return rooms;
