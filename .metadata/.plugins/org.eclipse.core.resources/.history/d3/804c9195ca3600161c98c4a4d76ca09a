@@ -264,9 +264,9 @@ public class FacadeReservation
 
 			for(Room item : rooms)
 			{
-	            ResultSet result = stat.executeQuery("SELECT COUNT(*) FROM RESERVATIONS WHERE ROOM_ID=" + item.GetId() + " AND DATE_FROM > \"" +  + "\" AND DATE_TO < \"" +  + "\" )");
+	            ResultSet result = stat.executeQuery("SELECT COUNT(*) FROM RESERVATIONS WHERE ROOM_ID=" + item.GetId() + " )";
 	            result.next();
-	            if (result.getInt("COUNT(*)") == 0) 
+	            if (result.getInt("COUNT(*)" == 0) 
 	            {
 	            	tempRooms.add(item);
 	            }

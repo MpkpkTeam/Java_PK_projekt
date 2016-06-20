@@ -33,7 +33,7 @@ public class Hotel {
 			System.out.println("Is Occupied: " + r.IsOccupied());
 		}
 		
-		facade.AddReservation(new Date(123), new Date(456), clients.get(0), 5, rooms.get(4));
+		facade.AddReservation(new Date(123), new Date(456), clients.get(0), 2, rooms.get(4));
 		
 		ArrayList<Reservation> qwe = facade.ListaAllReservation();
 		for(Reservation r : qwe)

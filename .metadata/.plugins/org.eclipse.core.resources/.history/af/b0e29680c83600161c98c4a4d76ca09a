@@ -256,36 +256,17 @@ public class FacadeReservation
 	}
 	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
 	{
-		ArrayList<Room> tempRooms = new ArrayList<Room>();
-		
-		try 
-		{
-			stat = conn.createStatement();
+		ArrayList<Room> ret = new ArrayList<Room>();
 
-			for(Room item : rooms)
-			{
-	            ResultSet result = stat.executeQuery("SELECT COUNT(*) FROM RESERVATIONS WHERE ROOM_ID=" + item.GetId() + " AND DATE_FROM > \"" +  + "\" AND DATE_TO < \"" +  + "\" )");
-	            result.next();
-	            if (result.getInt("COUNT(*)") == 0) 
-	            {
-	            	tempRooms.add(item);
-	            }
-			}
-			
-            
-			stat.close();
-			conn.close();
-			return tempRooms;
-		} 
-		catch (Exception e) 
+		for(Room item: rooms)
 		{
-			
+			if (item.GetCapacity() >= capacity && !item.IsOccupied()) 
+			{
+				ret.add(item);
+			}
 		}
-		
-		
-		
-		
-		
+	
+		return ret;
 	}
 	public ArrayList<Room> ListAllRooms()
 	{
@@ -307,6 +288,7 @@ public class FacadeReservation
         {
             Class.forName("org.sqlite.JDBC");           
             conn = DriverManager.getConnection("jdbc:sqlite:"+dbName+".sqlite");
+            //System.out.println("Po³¹czy³em siê z baz¹ "+dbName);
         } 
         catch (Exception e)
         {

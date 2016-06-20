@@ -262,20 +262,11 @@ public class FacadeReservation
 		{
 			stat = conn.createStatement();
 
-			for(Room item : rooms)
-			{
-	            ResultSet result = stat.executeQuery("SELECT COUNT(*) FROM RESERVATIONS WHERE ROOM_ID=" + item.GetId() + " AND DATE_FROM > \"" +  + "\" AND DATE_TO < \"" +  + "\" )");
-	            result.next();
-	            if (result.getInt("COUNT(*)") == 0) 
-	            {
-	            	tempRooms.add(item);
-	            }
+            ResultSet result = stat.executeQuery("SELECT COUNT(*) FROM RESERVATIONS WHERE DATE_FROM > "");
+            int id = -1;
+            if (result.next(); result.getInt("COUNT(*)" == 0) {
+				
 			}
-			
-            
-			stat.close();
-			conn.close();
-			return tempRooms;
 		} 
 		catch (Exception e) 
 		{
