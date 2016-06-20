@@ -15,7 +15,7 @@ public class Hotel {
 	
 	FacadeReservation facade;
 	
-	public Hotel(String name) // Constructor
+	public Hotel(String name) throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException // Constructor
 	{
 		this.Name = name;
 		
