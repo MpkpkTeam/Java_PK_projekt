@@ -9,292 +9,201 @@ import java.text.SimpleDateFormat;
 
 public class FacadeReservation
 {
-    String dbName = "hotel";
+	String dbName = "hotel";
 
-    private Connection conn = connectToDatabase(dbName);
-    private Statement stat;
-	
+	private Connection conn = connectToDatabase(dbName);
+	private Statement stat;
+
 	ArrayList<Client> clients; // List of clients
 	ArrayList<Reservation> reservations; // List of reservations
 	ArrayList<Room> rooms; // List of rooms
-	
-	public FacadeReservation(ArrayList<Client> clients, ArrayList<Reservation> reservations, ArrayList<Room> rooms)
+
+	public FacadeReservation(ArrayList<Client> clients, ArrayList<Reservation> reservations, ArrayList<Room> rooms) throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException
 	{
 		this.clients = clients;
 		this.reservations = reservations;
 		this.rooms = rooms;
-		
-        try 
-        {
-            stat = conn.createStatement();
-            ResultSet result = stat.executeQuery("SELECT * FROM CLIENTS");
-            int id, phoneNumber;
-            String firstName, lastName;
-            while(result.next()) 
-            {
-                id = result.getInt("ID");
-                firstName = result.getString("FIRSTNAME");
-                lastName = result.getString("LASTNAME");
-                phoneNumber = Integer.parseInt(result.getString("PHONE"));
-                
-                clients.add(new Client(id, firstName, lastName, phoneNumber));
-            }
-        }
-        catch (SQLException e) 
-        {
-            e.printStackTrace();
-        }
-        
-        try 
-        {
-            stat = conn.createStatement();
-            ResultSet result = stat.executeQuery("SELECT * FROM ROOMS");
-            int id, capacity, isVip, numberOfPeople;
-            while(result.next()) 
-            {
-                id = result.getInt("ID");
-                capacity = result.getInt("CAPACITY");
-                isVip = result.getInt("ISVIP");
-                numberOfPeople = result.getInt("NUMBER_OF_PEOPLE");
 
-                if (isVip == 0) 
-                {
-					if (capacity == 1) 
+		try
+		{
+			stat = conn.createStatement();
+			ResultSet result = stat.executeQuery("SELECT * FROM CLIENTS");
+			int id, phoneNumber;
+			String firstName, lastName;
+			while (result.next())
+			{
+				id = result.getInt("ID");
+				firstName = result.getString("FIRSTNAME");
+				lastName = result.getString("LASTNAME");
+				phoneNumber = Integer.parseInt(result.getString("PHONE"));
+
+				clients.add(new Client(id, firstName, lastName, phoneNumber));
+			}
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+
+		try
+		{
+			stat = conn.createStatement();
+			ResultSet result = stat.executeQuery("SELECT * FROM ROOMS");
+			int id, capacity, isVip, numberOfPeople;
+			while (result.next())
+			{
+				id = result.getInt("ID");
+				capacity = result.getInt("CAPACITY");
+				isVip = result.getInt("ISVIP");
+				numberOfPeople = result.getInt("NUMBER_OF_PEOPLE");
+				// asdasdasds,dfbmsdhvb,sv,ksfdg,sjfdkng,ksarg
+				
+				rooms.add(RoomFactory.ProduceRoom(id, capacity, isVip));
+				rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
+			}
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+
+		try
+		{
+			stat = conn.createStatement();
+			ResultSet result = stat.executeQuery("SELECT * FROM RESERVATIONS");
+			int id, clientId, roomId;
+			String from, to;
+			while (result.next())
+			{
+				id = result.getInt("ID");
+				from = result.getString("DATE_FROM");
+				to = result.getString("DATE_TO");
+				roomId = result.getInt("ROOM_ID");
+				clientId = result.getInt("CLIENT_ID");
+
+				Room tempR = null;
+				Client tempC = null;
+
+				for (Room r : rooms)
+				{
+					if (r.GetId() == roomId)
 					{
-						rooms.add(new SingleRoom(id, new NormalRoom(new BareRoom())));
-						try 
-						{
-							rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
-						} 
-						catch (Exception e)
-						{
-							
-						}
-					}
-					else if (capacity == 2)
-					{
-						rooms.add(new DoubleRoom(id, new NormalRoom(new BareRoom())));	
-						try 
-						{
-							rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
-						} 
-						catch (Exception e)
-						{
-							
-						}
-					}		
-					else if (capacity == 3)
-					{
-						rooms.add(new TripleRoom(id, new NormalRoom(new BareRoom())));
-						try 
-						{
-							rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
-						} 
-						catch (Exception e)
-						{
-							
-						}
-					}	
-					else if (capacity == 4)
-					{
-						rooms.add(new QuadrupleRoom(id, new NormalRoom(new BareRoom())));
-						try 
-						{
-							rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
-						} 
-						catch (Exception e)
-						{
-							
-						}
-					}
-				}
-                else if(isVip == 1)
-                {
-					if (capacity == 1) 
-					{
-						rooms.add(new SingleRoom(id, new VipRoom(new BareRoom())));
-						try 
-						{
-							rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
-						} 
-						catch (Exception e)
-						{
-							
-						}
-					}
-					else if (capacity == 2)
-					{
-						rooms.add(new DoubleRoom(id, new VipRoom(new BareRoom())));	
-						try 
-						{
-							rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
-						} 
-						catch (Exception e)
-						{
-							
-						}
-					}		
-					else if (capacity == 3)
-					{
-						rooms.add(new TripleRoom(id, new VipRoom(new BareRoom())));
-						try 
-						{
-							rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
-						} 
-						catch (Exception e)
-						{
-							
-						}
-					}	
-					else if (capacity == 4)
-					{
-						rooms.add(new QuadrupleRoom(id, new VipRoom(new BareRoom())));
-						try 
-						{
-							rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
-						} 
-						catch (Exception e)
-						{
-							
-						}
-					}
-                }
-            }
-        } 
-        catch (SQLException e) 
-        {
-            e.printStackTrace();
-        } 
-        
-        try 
-        {
-            stat = conn.createStatement();
-            ResultSet result = stat.executeQuery("SELECT * FROM RESERVATIONS");
-            int id, clientId, roomId;
-            String from, to;
-            while(result.next()) 
-            {
-                id = result.getInt("ID");
-                from = result.getString("DATE_FROM");
-                to = result.getString("DATE_TO");
-                roomId = result.getInt("ROOM_ID");
-                clientId = result.getInt("CLIENT_ID");
-                
-                Room tempR = null;
-                Client tempC = null;
-                
-                for(Room r : rooms)
-                {
-                	if (r.GetId() == roomId) 
-                	{
 						tempR = r;
-                		break;
+						break;
 					}
-                }
+				}
 
-                for(Client c : clients)
-                {
-                	if (c.getId() == clientId) 
-                	{
+				for (Client c : clients)
+				{
+					if (c.getId() == clientId)
+					{
 						tempC = c;
-                		break;
+						break;
 					}
-                }
-                DateFormat format = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
-                
-                try 
-                {
-                    reservations.add(new Reservation(id, format.parse(from), format.parse(to), tempC, tempR));
 				}
-                catch (Exception e)
-                {
-					
+				DateFormat format = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
+
+				try
+				{
+					reservations.add(new Reservation(id, format.parse(from), format.parse(to), tempC, tempR));
 				}
-            	// TODO
-            }
-        } 
-        catch (SQLException e) 
-        {
-            e.printStackTrace();
-        }
+				catch (Exception e)
+				{
+
+				}
+				// TODO
+			}
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
 		System.out.println("DONE");
 	}
-	
-	public void AddReservation(Date from, Date to, String firstName, String lastName, int phoneNumber, int numberOfPeople, Room room)
-	{
-		try 
-		{
-            DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
-			//room.SetNumberOfClients(numberOfPeople);
-            stat = conn.createStatement();
 
-			String tabelaSQL = "insert into CLIENTS (FIRSTNAME, LASTNAME, PHONE) values( \"" + firstName + "\", \"" + lastName + "\", \"" + Integer.toString(phoneNumber) + "\" )";
+	public void AddReservation(Date from, Date to, String firstName, String lastName, int phoneNumber,
+			int numberOfPeople, Room room)
+	{
+		try
+		{
+			DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
+			// room.SetNumberOfClients(numberOfPeople);
+			stat = conn.createStatement();
+
+			String tabelaSQL = "insert into CLIENTS (FIRSTNAME, LASTNAME, PHONE) values( \"" + firstName + "\", \""
+					+ lastName + "\", \"" + Integer.toString(phoneNumber) + "\" )";
 			stat.executeUpdate(tabelaSQL);
-			
-            stat = conn.createStatement();
-            ResultSet result = stat.executeQuery("SELECT ID FROM CLIENTS WHERE FIRSTNAME=\"" + firstName + "\" AND LASTNAME= \"" + lastName + "\"");
-            int id = -1;
-            while(result.next()) 
-            {
-                id = result.getInt("ID");
-            }		
+
+			stat = conn.createStatement();
+			ResultSet result = stat.executeQuery(
+					"SELECT ID FROM CLIENTS WHERE FIRSTNAME=\"" + firstName + "\" AND LASTNAME= \"" + lastName + "\"");
+			int id = -1;
+			while (result.next())
+			{
+				id = result.getInt("ID");
+			}
 			Client client = new Client(id, firstName, lastName, phoneNumber);
 			clients.add(client);
-			
-			tabelaSQL = "insert into RESERVATIONS (DATE_FROM, DATE_TO, CLIENT_ID, ROOM_ID) values( \"" + df.format(from) + "\", \"" + df.format(to) + "\", " + client.getId() + ", " + room.GetId() + " )";
+
+			tabelaSQL = "insert into RESERVATIONS (DATE_FROM, DATE_TO, CLIENT_ID, ROOM_ID) values( \"" + df.format(from)
+					+ "\", \"" + df.format(to) + "\", " + client.getId() + ", " + room.GetId() + " )";
 			stat.executeUpdate(tabelaSQL);
-            result = stat.executeQuery("SELECT ID FROM RESERVATIONS WHERE CLIENT_ID= " + client.getId() + " AND ROOM_ID=" + room.GetId());
-            id = -1;
-            while(result.next()) 
-            {
-                id = result.getInt("ID");
-            }
+			result = stat.executeQuery(
+					"SELECT ID FROM RESERVATIONS WHERE CLIENT_ID= " + client.getId() + " AND ROOM_ID=" + room.GetId());
+			id = -1;
+			while (result.next())
+			{
+				id = result.getInt("ID");
+			}
 			reservations.add(new Reservation(id, from, to, client, room));
-			
+
 			stat.close();
-		} 
-		catch (Exception e) 
+		}
+		catch (Exception e)
 		{
 			System.out.println("ERROR: " + e.getMessage() + ", " + e.getLocalizedMessage());
 		}
 	}
+
 	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
 	{
 		ArrayList<Room> tempRooms = new ArrayList<Room>();
-        DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS:SSS", Locale.ENGLISH);
+		DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS:SSS", Locale.ENGLISH);
 
-		try 
+		try
 		{
 			stat = conn.createStatement();
 
-			for(Room item : rooms)
+			for (Room item : rooms)
 			{
-				if (item.GetCapacity() >= capacity) 
+				if (item.GetCapacity() >= capacity)
 				{
-		            ResultSet result = stat.executeQuery("SELECT COUNT(*) FROM RESERVATIONS "
-		            		+ "WHERE ROOM_ID=" + item.GetId() + " AND"
-		            		+ "("
-		            		+ "(DATE_FROM <= \"" + df.format(to) + "\" AND DATE_FROM >= \"" + df.format(from) + "\") OR"
-		            		+ "(DATE_TO >= \"" + df.format(from) + "\" AND DATE_TO <= \"" + df.format(to) + "\") OR"
-		            		+ "(DATE_FROM <= \"" + df.format(from) + "\" AND DATE_TO >= \"" + df.format(to) + "\") OR"
-		            		+ "(DATE_TO <= \"" + df.format(to) + "\" AND DATE_FROM >= \"" + df.format(from) + "\")"
-		            		+ ")");
-		            		result.next();
-		            if (result.getInt("COUNT(*)") == 0) 
-		            {
-		            	tempRooms.add(item);
-		            }
+					ResultSet result = stat.executeQuery("SELECT COUNT(*) FROM RESERVATIONS " + "WHERE ROOM_ID="
+							+ item.GetId() + " AND" + "(" + "(DATE_FROM <= \"" + df.format(to)
+							+ "\" AND DATE_FROM >= \"" + df.format(from) + "\") OR" + "(DATE_TO >= \"" + df.format(from)
+							+ "\" AND DATE_TO <= \"" + df.format(to) + "\") OR" + "(DATE_FROM <= \"" + df.format(from)
+							+ "\" AND DATE_TO >= \"" + df.format(to) + "\") OR" + "(DATE_TO <= \"" + df.format(to)
+							+ "\" AND DATE_FROM >= \"" + df.format(from) + "\")" + ")");
+					result.next();
+					if (result.getInt("COUNT(*)") == 0)
+					{
+						tempRooms.add(item);
+					}
 				}
 			}
+<<<<<<< HEAD
 <<<<<<< HEAD
 			
            
 =======
             
 >>>>>>> ace5cd1736d7a097879e27ab4a9b48eb0d88b3b9
+=======
+
+>>>>>>> c194238f8fad720e05709345c9998cd7cec33918
 			stat.close();
-		} 
-		catch (Exception e) 
+		}
+		catch (Exception e)
 		{
 			System.out.println(e.getMessage());
 		}
@@ -308,33 +217,39 @@ public class FacadeReservation
 =======
 		return tempRooms;
 	}
+<<<<<<< HEAD
 >>>>>>> ace5cd1736d7a097879e27ab4a9b48eb0d88b3b9
+=======
+
+>>>>>>> c194238f8fad720e05709345c9998cd7cec33918
 	public ArrayList<Room> ListAllRooms()
 	{
 		return rooms;
 	}
+
 	public ArrayList<Reservation> ListaAllReservation()
 	{
 		return reservations;
 	}
+
 	public ArrayList<Client> ListAllClients()
 	{
 		return clients;
 	}
-	
-    static Connection connectToDatabase(String dbName) 
-     {
-        Connection conn = null;
-        try 
-        {
-            Class.forName("org.sqlite.JDBC");           
-            conn = DriverManager.getConnection("jdbc:sqlite:"+dbName+".sqlite");
-        } 
-        catch (Exception e)
-        {
-            System.err.println("B³¹d w po³¹czeniu z baz¹: \n" + e.getMessage());
-            return null;
-        }
-        return conn;
-    }
+
+	static Connection connectToDatabase(String dbName)
+	{
+		Connection conn = null;
+		try
+		{
+			Class.forName("org.sqlite.JDBC");
+			conn = DriverManager.getConnection("jdbc:sqlite:" + dbName + ".sqlite");
+		}
+		catch (Exception e)
+		{
+			System.err.println("B³¹d w po³¹czeniu z baz¹: \n" + e.getMessage());
+			return null;
+		}
+		return conn;
+	}
 }
