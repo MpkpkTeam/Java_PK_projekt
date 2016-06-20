@@ -24,8 +24,7 @@ public class RoomReserwationControler {
 		public void actionPerformed(ActionEvent e) {
 			View.jfrm.setVisible(false);
 			Model.Showroom();
-			while(Model.Showfreerooms.isVisible())
-				View.jfrm.setVisible(true);
+			
 		}
 	}
 	

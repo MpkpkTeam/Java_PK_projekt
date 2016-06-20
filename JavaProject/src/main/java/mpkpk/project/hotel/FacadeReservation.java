@@ -258,7 +258,7 @@ public class FacadeReservation
 			System.out.println("ERROR: " + e.getMessage() + ", " + e.getLocalizedMessage());
 		}
 	}
-/*	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
+	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
 	{
 		ArrayList<Room> tempRooms = new ArrayList<Room>();
         DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS:SSS", Locale.ENGLISH);
@@ -304,7 +304,7 @@ public class FacadeReservation
 		
 		
 		
-	}*/ 
+	}
 =======
 		return tempRooms;
 	}
