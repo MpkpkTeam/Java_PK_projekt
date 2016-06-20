@@ -3,5 +3,5 @@ Java project repo
 
 Projekt stworzony z wykorzystaniem Mavena
 
-Zosta³y u¿yte 3 wzorce projektowe: dekrator, ... i ...
+Zosta³y u¿yte 3 wzorce projektowe: dekorator, fasada, fabryka statyczna
 
