@@ -162,7 +162,7 @@ public class FacadeReservation
 		}
 	}
 
-	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
+	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity) throws Exception
 	{
 		ArrayList<Room> tempRooms = new ArrayList<Room>();
 		DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS:SSS", Locale.ENGLISH);
@@ -192,7 +192,7 @@ public class FacadeReservation
 		}
 		catch (Exception e)
 		{
-			System.out.println(e.getMessage());
+			throw e;
 		}
 		return tempRooms;
 	}
@@ -212,6 +212,36 @@ public class FacadeReservation
 		return clients;
 	}
 
+	public double CalculatePrice(Date from, Date to, Room room)
+	{
+		try
+		{
+			stat = conn.createStatement();
+
+			ResultSet result = stat.executeQuery("SELECT PRICE FROM PRICES WHERE ID=" + room.GetCapacity());
+			result.next();
+			double priceOfOneDay = result.getDouble("PRICE");
+
+			stat.close();
+
+			int numberOfDays = calculateNumberOfDaysBetween(from, to);
+
+			if (room.IsVip())
+			{
+				return (priceOfOneDay * numberOfDays) * 1.5;
+			}
+			else
+			{
+				return priceOfOneDay * numberOfDays;
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return 0;
+	}
+
 	static Connection connectToDatabase(String dbName)
 	{
 		Connection conn = null;
@@ -226,5 +256,21 @@ public class FacadeReservation
 			return null;
 		}
 		return conn;
+	}
+
+	private int calculateNumberOfDaysBetween(Date startDate, Date endDate)
+	{
+		if (startDate.after(endDate))
+		{
+			throw new IllegalArgumentException("End date should be grater or equals to start date");
+		}
+
+		long startDateTime = startDate.getTime();
+		long endDateTime = endDate.getTime();
+		long milPerDay = 1000 * 60 * 60 * 24;
+
+		int numOfDays = (int) ((endDateTime - startDateTime) / milPerDay);
+
+		return (numOfDays + 1); // add one day to include start date in interval
 	}
 }
