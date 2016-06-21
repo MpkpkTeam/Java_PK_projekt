@@ -1,24 +1,25 @@
 package mpkpk.project.hotel;
 
-public class Client {
+public class Client
+{
 	private int id;
 	public int getId()
 	{
 		return id;
 	}
-	
+
 	private String firstName;
 	public String GetFirstName()
 	{
 		return firstName;
 	}
-	
+
 	private String lastName;
 	public String GetLastName()
 	{
 		return lastName;
 	}
-	
+
 	private int phoneNumber;
 	public int GetPhoneNumber()
 	{
@@ -32,7 +33,7 @@ public class Client {
 	{
 		return firstName + " " + lastName;
 	}
-	
+
 	public Client(int id, String firstName, String lastName, int phoneNumber)
 	{
 		this.id = id;

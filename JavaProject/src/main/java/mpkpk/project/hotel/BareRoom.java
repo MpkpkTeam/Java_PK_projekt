@@ -1,20 +1,20 @@
 package mpkpk.project.hotel;
 
-public class BareRoom  implements Room{
-
-	public int GetId() 
+public class BareRoom implements Room
+{
+	public int GetId()
 	{
 		return 0;
 	}
 
-	public boolean IsOccupied() 
+	public boolean IsOccupied()
 	{
 		return false;
 	}
 
-	public void SetNumberOfClients(int numberOfClients) throws TooManyClientsException, LessThanZeroClientsException 
+	public void SetNumberOfClients(int numberOfClients) throws TooManyClientsException, LessThanZeroClientsException
 	{
-		
+
 	}
 
 	public int GetCapacity()
@@ -22,4 +22,8 @@ public class BareRoom  implements Room{
 		return 0;
 	}
 
+	public boolean IsVip()
+	{
+		return false;
+	}
 }

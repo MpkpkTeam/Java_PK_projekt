@@ -4,9 +4,10 @@ public class NormalRoom extends RoomDecorator
 {
 	private boolean isVip = false;
 
-	public NormalRoom(Room decoratedRoom) 
+	public NormalRoom(Room decoratedRoom)
 	{
 		super(decoratedRoom);
+		super.isVip = isVip;
 	}
 
 	public boolean CheckIfVip()
