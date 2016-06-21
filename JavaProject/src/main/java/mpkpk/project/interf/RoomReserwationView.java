@@ -76,4 +76,9 @@ public class RoomReserwationView {
 		
 	}
 	
+	void addAddReserwationButtonListener(ActionListener listenforAddReserwationbtn){
+		
+		btnAddReserwation.addActionListener(listenforAddReserwationbtn);
+	}
+	
 }

@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.util.ArrayList;
 
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
 import javax.swing.JTable;
@@ -16,9 +17,9 @@ import javax.swing.JScrollPane;
 
 public class ShowRooms extends JDialog {
 	public JTable table;
-	
 	public ShowRooms(ArrayList<Room> room) {
 		
+		this.setModal(true);
 		Object[] colnames = {"ID","Capacity","Occupied"};
 		Object[][] data = new String[room.size()][3];
 		
@@ -36,7 +37,7 @@ public class ShowRooms extends JDialog {
 		
 		table = new JTable(data, colnames);
 		getContentPane().add(table, BorderLayout.CENTER);		
-		
+
 		JButton btnOk = new JButton("OK");
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -50,6 +51,7 @@ public class ShowRooms extends JDialog {
 		getContentPane().add(scrollPane, BorderLayout.EAST);
 		this.setResizable(false);
 		this.setVisible(true);
+		
 		
 	}
 

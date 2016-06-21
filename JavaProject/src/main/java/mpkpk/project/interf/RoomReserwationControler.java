@@ -18,6 +18,7 @@ public class RoomReserwationControler {
 		this.View.addShowRoomsButtonListener(new ShowRoomButtonListener());
 		this.View.addShowClientsButtonListener(new ShowClientsButtonListener());
 		this.View.addShowReserwationsButtonListener(new ShowReserwationButtonListener());
+		this.View.addAddReserwationButtonListener(new AddReserwationButtonListener());
 	}
 	
 	class ShowRoomButtonListener implements ActionListener{
@@ -46,6 +47,15 @@ public class RoomReserwationControler {
 			
 		}		
 		
+	}
+	
+	class AddReserwationButtonListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e){
+			
+			Model.Addreserwations();
+			
+		}
 	}
 	
 }

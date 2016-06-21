@@ -19,7 +19,7 @@ public class ShowClients extends JDialog {
 	private JTable table;
 	
 	public ShowClients(ArrayList<Client> client) {
-		
+		this.setModal(true);
 		Object[] colnames = {"ID","First Name","Last Name","Phone"};
 		Object[][] data = new String[client.size()][4];
 		

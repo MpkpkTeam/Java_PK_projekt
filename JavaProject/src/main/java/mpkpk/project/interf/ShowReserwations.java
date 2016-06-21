@@ -23,7 +23,7 @@ public class ShowReserwations extends JDialog {
 	public JTable table;
 	
 	public ShowReserwations(ArrayList<Reservation> reserwation) {
-		
+		this.setModal(true);
 		Object[] colnames = {"ID","Date From","Date to","Client ID","Room ID"};
 		Object[][] data = new String[reserwation.size()][5];
 		
