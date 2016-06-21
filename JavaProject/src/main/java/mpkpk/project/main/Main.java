@@ -1,17 +1,17 @@
 package mpkpk.project.main;
 import mpkpk.project.hotel.*;
-import mpkpk.project.interf.RoomReserwationControler;
-import mpkpk.project.interf.RoomReserwationModel;
-import mpkpk.project.interf.RoomReserwationView;
+import mpkpk.project.interf.RoomReservationController;
+import mpkpk.project.interf.RoomReservationModel;
+import mpkpk.project.interf.RoomReservationView;
 
 public class Main {
 
 	public static void main(String[] args) throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException {
 		System.out.println("Test");
 		
-		RoomReserwationView View = new RoomReserwationView();
-		RoomReserwationModel Model = new RoomReserwationModel();
+		RoomReservationView View = new RoomReservationView();
+		RoomReservationModel Model = new RoomReservationModel();
 		
-		RoomReserwationControler Controler = new RoomReserwationControler(Model, View);
+		RoomReservationController Controller = new RoomReservationController(Model, View);
 	}
 }

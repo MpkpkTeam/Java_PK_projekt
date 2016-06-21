@@ -17,7 +17,7 @@ import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class AddReserwation{
+public class AddReservation{
 	//table.getSelectedRow();
 	public JFrame Addreserwation;
 	private JPanel contentPane;
@@ -26,7 +26,7 @@ public class AddReserwation{
 	private JTextField textField_2;
 	private JTable table;
 
-	public AddReserwation() {
+	public AddReservation() {
 		
 		Addreserwation = new JFrame();
 		Addreserwation.setVisible(true);

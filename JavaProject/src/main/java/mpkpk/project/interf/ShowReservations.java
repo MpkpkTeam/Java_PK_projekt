@@ -19,10 +19,10 @@ import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 
-public class ShowReserwations extends JDialog {
+public class ShowReservations extends JDialog {
 	public JTable table;
 	
-	public ShowReserwations(ArrayList<Reservation> reserwation) {
+	public ShowReservations(ArrayList<Reservation> reserwation) {
 		this.setModal(true);
 		Object[] colnames = {"ID","Date From","Date to","Client ID","Room ID"};
 		Object[][] data = new String[reserwation.size()][5];

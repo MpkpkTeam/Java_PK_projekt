@@ -4,13 +4,13 @@ import mpkpk.project.main.Hotel;
 
 import java.awt.event.*;
 
-public class RoomReserwationControler {
+public class RoomReservationController {
 	
 	
-	protected RoomReserwationModel Model;
-	protected RoomReserwationView View;
+	protected RoomReservationModel Model;
+	protected RoomReservationView View;
 	
-	public RoomReserwationControler(RoomReserwationModel Model, RoomReserwationView View){
+	public RoomReservationController(RoomReservationModel Model, RoomReservationView View){
 		
 		this.Model = Model;
 		this.View = View;

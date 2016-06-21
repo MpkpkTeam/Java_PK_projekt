@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class RoomReserwationView {
+public class RoomReservationView {
 	
 	public JButton btnAddReserwation = new JButton("Add reserwation");
 	public JButton btnShowClients = new JButton("Show clients");
@@ -14,7 +14,7 @@ public class RoomReserwationView {
 	public JButton btnShowReserwations = new JButton("Show reserwations");
 	public JFrame jfrm;
 	
-	public RoomReserwationView(){
+	public RoomReservationView(){
 		jfrm = new JFrame("RoomReserwation");
 		jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jfrm.setSize(500, 350);

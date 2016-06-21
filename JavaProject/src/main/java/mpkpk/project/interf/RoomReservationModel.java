@@ -7,14 +7,14 @@ import mpkpk.project.hotel.TooManyClientsException;
 import mpkpk.project.hotel.WrongParametersException;
 import mpkpk.project.main.Hotel;
 
-public class RoomReserwationModel {
+public class RoomReservationModel {
 	public ShowRooms Showfreerooms;
 	public ShowClients Showclient;
-	public ShowReserwations Showreserwation;
-	public AddReserwation Addreserwation;
+	public ShowReservations Showreserwation;
+	public AddReservation Addreserwation;
 	Hotel hotel;
 
-	public RoomReserwationModel() throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException{
+	public RoomReservationModel() throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException{
 		hotel = new Hotel("Hotel");
 	}
 	
@@ -29,11 +29,11 @@ public class RoomReserwationModel {
 	}
 	
 	public void Showreserwations(){
-		Showreserwation = new ShowReserwations(hotel.facade.ListaAllReservation());
+		Showreserwation = new ShowReservations(hotel.facade.ListaAllReservation());
 
 	}
 	
 	public void Addreserwations(){
-		Addreserwation = new AddReserwation();
+		Addreserwation = new AddReservation();
 	}
 }
