@@ -11,7 +11,7 @@ public class RoomReservationModel {
 	public ShowRooms Showfreerooms;
 	public ShowClients Showclient;
 	public ShowReservations Showreserwation;
-	public AddReservation Addreserwation;
+	public AddReservationView Addreserwation;
 	Hotel hotel;
 
 	public RoomReservationModel() throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException{
@@ -34,6 +34,6 @@ public class RoomReservationModel {
 	}
 	
 	public void Addreserwations(){
-		Addreserwation = new AddReservation();
+		Addreserwation = new AddReservationView();
 	}
 }
