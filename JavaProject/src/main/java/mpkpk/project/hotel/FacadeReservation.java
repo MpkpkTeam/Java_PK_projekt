@@ -18,7 +18,8 @@ public class FacadeReservation
 	ArrayList<Reservation> reservations; // List of reservations
 	ArrayList<Room> rooms; // List of rooms
 
-	public FacadeReservation(ArrayList<Client> clients, ArrayList<Reservation> reservations, ArrayList<Room> rooms) throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException
+	public FacadeReservation(ArrayList<Client> clients, ArrayList<Reservation> reservations, ArrayList<Room> rooms)
+			throws Exception
 	{
 		this.clients = clients;
 		this.reservations = reservations;
@@ -42,7 +43,7 @@ public class FacadeReservation
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			throw e;
 		}
 
 		try
@@ -56,15 +57,14 @@ public class FacadeReservation
 				capacity = result.getInt("CAPACITY");
 				isVip = result.getInt("ISVIP");
 				numberOfPeople = result.getInt("NUMBER_OF_PEOPLE");
-				// asdasdasds,dfbmsdhvb,sv,ksfdg,sjfdkng,ksarg
-				
+
 				rooms.add(RoomFactory.ProduceRoom(id, capacity, isVip));
 				rooms.get(rooms.size() - 1).SetNumberOfClients(numberOfPeople);
 			}
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			throw e;
 		}
 
 		try
@@ -101,33 +101,30 @@ public class FacadeReservation
 						break;
 					}
 				}
-				DateFormat format = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
+				DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
 
 				try
 				{
-					reservations.add(new Reservation(id, format.parse(from), format.parse(to), tempC, tempR));
+					reservations.add(new Reservation(id, df.parse(from), df.parse(to), tempC, tempR));
 				}
 				catch (Exception e)
 				{
-
+					throw e;
 				}
-				// TODO
 			}
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			throw e;
 		}
-		System.out.println("DONE");
 	}
 
 	public void AddReservation(Date from, Date to, String firstName, String lastName, int phoneNumber,
-			int numberOfPeople, Room room)
+			int numberOfPeople, Room room) throws Exception
 	{
 		try
 		{
-			DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
-			// room.SetNumberOfClients(numberOfPeople);
+			DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS:SSS", Locale.ENGLISH);
 			stat = conn.createStatement();
 
 			String tabelaSQL = "insert into CLIENTS (FIRSTNAME, LASTNAME, PHONE) values( \"" + firstName + "\", \""
@@ -161,11 +158,11 @@ public class FacadeReservation
 		}
 		catch (Exception e)
 		{
-			System.out.println("ERROR: " + e.getMessage() + ", " + e.getLocalizedMessage());
+			throw e;
 		}
 	}
 
-	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity)
+	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity) throws Exception
 	{
 		ArrayList<Room> tempRooms = new ArrayList<Room>();
 		DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS:SSS", Locale.ENGLISH);
@@ -191,12 +188,11 @@ public class FacadeReservation
 					}
 				}
 			}
-
 			stat.close();
 		}
 		catch (Exception e)
 		{
-			System.out.println(e.getMessage());
+			throw e;
 		}
 		return tempRooms;
 	}
@@ -216,6 +212,36 @@ public class FacadeReservation
 		return clients;
 	}
 
+	public double CalculatePrice(Date from, Date to, Room room)
+	{
+		try
+		{
+			stat = conn.createStatement();
+
+			ResultSet result = stat.executeQuery("SELECT PRICE FROM PRICES WHERE ID=" + room.GetCapacity());
+			result.next();
+			double priceOfOneDay = result.getDouble("PRICE");
+
+			stat.close();
+
+			int numberOfDays = calculateNumberOfDaysBetween(from, to);
+
+			if (room.IsVip())
+			{
+				return (priceOfOneDay * numberOfDays) * 1.5;
+			}
+			else
+			{
+				return priceOfOneDay * numberOfDays;
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return 0;
+	}
+
 	static Connection connectToDatabase(String dbName)
 	{
 		Connection conn = null;
@@ -230,5 +256,21 @@ public class FacadeReservation
 			return null;
 		}
 		return conn;
+	}
+
+	private int calculateNumberOfDaysBetween(Date startDate, Date endDate)
+	{
+		if (startDate.after(endDate))
+		{
+			throw new IllegalArgumentException("End date should be grater or equals to start date");
+		}
+
+		long startDateTime = startDate.getTime();
+		long endDateTime = endDate.getTime();
+		long milPerDay = 1000 * 60 * 60 * 24;
+
+		int numOfDays = (int) ((endDateTime - startDateTime) / milPerDay);
+
+		return (numOfDays + 1); // add one day to include start date in interval
 	}
 }

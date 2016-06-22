@@ -1,6 +1,6 @@
 package mpkpk.project.hotel;
 
-public class TripleRoom extends RoomDecorator 
+public class TripleRoom extends RoomDecorator
 {
 	public TripleRoom(int id, Room decoradtedRoom)
 	{
