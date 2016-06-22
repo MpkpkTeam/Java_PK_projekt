@@ -49,12 +49,12 @@ public class RoomReservationController {
 		
 	}
 	
+	///	2 controllers
 	class AddReserwationButtonListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e){
 			
-			Model.Addreserwations();
-			
+			AddReservationController Controller = new AddReservationController(Model); 
 		}
 	}
 	
