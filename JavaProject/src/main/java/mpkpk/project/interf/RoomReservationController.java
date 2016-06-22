@@ -17,8 +17,8 @@ public class RoomReservationController {
 		
 		this.View.addShowRoomsButtonListener(new ShowRoomButtonListener());
 		this.View.addShowClientsButtonListener(new ShowClientsButtonListener());
-		this.View.addShowReserwationsButtonListener(new ShowReserwationButtonListener());
-		this.View.addAddReserwationButtonListener(new AddReserwationButtonListener());
+		this.View.addShowreservationsButtonListener(new ShowreservationButtonListener());
+		this.View.addAddreservationButtonListener(new AddreservationButtonListener());
 	}
 	
 	class ShowRoomButtonListener implements ActionListener{
@@ -39,18 +39,18 @@ public class RoomReservationController {
 		}
 	}
 	
-	class ShowReserwationButtonListener implements ActionListener{
+	class ShowreservationButtonListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
 			
-			Model.Showreserwations();
+			Model.Showreservations();
 			
 		}		
 		
 	}
 	
 	///	2 controllers
-	class AddReserwationButtonListener implements ActionListener{
+	class AddreservationButtonListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e){
 			

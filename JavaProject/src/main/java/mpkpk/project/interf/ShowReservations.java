@@ -22,15 +22,15 @@ import javax.swing.JScrollPane;
 public class ShowReservations extends JDialog {
 	public JTable table;
 	
-	public ShowReservations(ArrayList<Reservation> reserwation) {
+	public ShowReservations(ArrayList<Reservation> reservation) {
 		this.setModal(true);
 		Object[] colnames = {"ID","Date From","Date to","Client ID","Room ID"};
-		Object[][] data = new String[reserwation.size()][5];
+		Object[][] data = new String[reservation.size()][5];
 		
-		DateFormat df = new SimpleDateFormat("YYYY-MM-DD", Locale.ENGLISH);
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
 		int i=0;
-		for(Reservation r : reserwation)
+		for(Reservation r : reservation)
 		{
 			data[i][0] = Integer.toString(r.GetId());
 			data[i][1] = df.format(r.GetFromDate());

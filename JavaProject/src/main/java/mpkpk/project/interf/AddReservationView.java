@@ -24,18 +24,21 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class AddReservationView{
 
 	
-	public JFrame Addreserwation;
+	public JFrame Addreservation;
 	private DefaultTableModel dataModel;
 	public JTable table;
 	public JTextField textField;
 	public JTextField textField_1;
 	public JTextField textField_2;
 	public JButton btnCheckFreeRooms;
-	public JButton btnAddReserwation;
+	public JButton btnAddreservation;
 	public JButton btnCancel;
 	private JLabel lblPrice;
 	public JComboBox comboBox;
@@ -53,17 +56,18 @@ public class AddReservationView{
 	
 	
 	public AddReservationView() {
-		Addreserwation = new JFrame();
-		Addreserwation.setResizable(false);
-		Addreserwation.getContentPane().setLayout(null);
+		Addreservation = new JFrame();
+		Addreservation.setResizable(false);
+		Addreservation.getContentPane().setLayout(null);
 
-		Addreserwation.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		Addreserwation.setBounds(100, 100, 723, 487);	
-		Addreserwation.setVisible(true);
+		Addreservation.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		Addreservation.setBounds(100, 100, 723, 487);	
+		Addreservation.setVisible(true);
+		Addreservation.setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(12, 13, 230, 389);
-		Addreserwation.getContentPane().add(panel);
+		Addreservation.getContentPane().add(panel);
 		
 		JLabel lblFirstName = new JLabel("First Name");
 		
@@ -209,36 +213,37 @@ public class AddReservationView{
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(252, 13, 460, 336);
-		Addreserwation.getContentPane().add(panel_1);
+		Addreservation.getContentPane().add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
 		Object[] colnames = {"ID","Capacity","VIP"};
-		Object[] data = {"-","-","-"};
 		
 	    dataModel = new DefaultTableModel();
 	    dataModel.setColumnIdentifiers(colnames);
-	    dataModel.addRow(data);
 	    
-	    table = new JTable(dataModel);
-	    
+	    table = new JTable(dataModel);   
 		
 		panel_1.add(table, BorderLayout.CENTER);
 		
 		JScrollPane scrollPane = new JScrollPane(table);
 		panel_1.add(scrollPane, BorderLayout.EAST);
 		
-		btnAddReserwation = new JButton("Add reserwation");
-		btnAddReserwation.setBounds(454, 389, 153, 25);
-		Addreserwation.getContentPane().add(btnAddReserwation);
+		btnAddreservation = new JButton("Add reservation");
+		btnAddreservation.setBounds(454, 389, 153, 25);
+		Addreservation.getContentPane().add(btnAddreservation);
 		
 		lblPrice = new JLabel("Price: " + price);
-		lblPrice.setBounds(444, 362, 56, 16);
-		Addreserwation.getContentPane().add(lblPrice);
+		lblPrice.setBounds(444, 362, 105, 16);
+		Addreservation.getContentPane().add(lblPrice);
 		
 		btnCancel = new JButton("Cancel");
 		btnCancel.setBounds(345, 389, 97, 25);
-		Addreserwation.getContentPane().add(btnCancel);
+		Addreservation.getContentPane().add(btnCancel);
 		//table.getSelectedRow();
+	}
+	
+	void addTableRoomChoose(MouseListener listenforRoomChoose){
+		table.addMouseListener(listenforRoomChoose);
 	}
 	
 	void addCheckFreeRoomsButtonListener(ActionListener listenforCheckFreeRoomsbtn){
@@ -250,7 +255,7 @@ public class AddReservationView{
 	}
 	
 	void addAddReservationButtonListener(ActionListener listenforAddReservationButton){
-			btnAddReserwation.addActionListener(listenforAddReservationButton);
+			btnAddreservation.addActionListener(listenforAddReservationButton);
 	}
 	
 	void setFreeRooms(String[][] data){
@@ -262,5 +267,9 @@ public class AddReservationView{
 		dataModel.fireTableDataChanged();
 	}
 	
+	void setPrice(double tmp){
+		price = tmp;
+		lblPrice.setText("Price: " + price);
+	}
 	
 }

@@ -8,14 +8,14 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class RoomReservationView {
 	
-	public JButton btnAddReserwation = new JButton("Add reserwation");
+	public JButton btnAddreservation = new JButton("Add reservation");
 	public JButton btnShowClients = new JButton("Show clients");
 	public JButton btnShowRooms = new JButton("Show rooms");
-	public JButton btnShowReserwations = new JButton("Show reserwations");
+	public JButton btnShowreservations = new JButton("Show reservations");
 	public JFrame jfrm;
 	
 	public RoomReservationView(){
-		jfrm = new JFrame("RoomReserwation");
+		jfrm = new JFrame("Roomreservation");
 		jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jfrm.setSize(500, 350);
 		jfrm.setLocationRelativeTo(null);
@@ -30,11 +30,11 @@ public class RoomReservationView {
 					.addGap(45)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 						.addComponent(btnShowClients, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnShowReserwations))
+						.addComponent(btnShowreservations))
 					.addPreferredGap(ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 						.addComponent(btnShowRooms, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnAddReserwation))
+						.addComponent(btnAddreservation))
 					.addGap(56))
 		);
 		groupLayout.setVerticalGroup(
@@ -45,11 +45,11 @@ public class RoomReservationView {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(btnShowRooms)
 							.addGap(62)
-							.addComponent(btnAddReserwation))
+							.addComponent(btnAddreservation))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(btnShowClients)
 							.addGap(62)
-							.addComponent(btnShowReserwations)))
+							.addComponent(btnShowreservations)))
 					.addContainerGap(86, Short.MAX_VALUE))
 		);
 		jfrm.getContentPane().setLayout(groupLayout);
@@ -70,15 +70,15 @@ public class RoomReservationView {
 		
 	}
 	
-	void addShowReserwationsButtonListener(ActionListener listenforShowReserwationsbtn){
+	void addShowreservationsButtonListener(ActionListener listenforShowreservationsbtn){
 		
-		btnShowReserwations.addActionListener(listenforShowReserwationsbtn);
+		btnShowreservations.addActionListener(listenforShowreservationsbtn);
 		
 	}
 	
-	void addAddReserwationButtonListener(ActionListener listenforAddReserwationbtn){
+	void addAddreservationButtonListener(ActionListener listenforAddreservationbtn){
 		
-		btnAddReserwation.addActionListener(listenforAddReserwationbtn);
+		btnAddreservation.addActionListener(listenforAddreservationbtn);
 	}
 	
 }
