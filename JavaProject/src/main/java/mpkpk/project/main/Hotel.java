@@ -16,11 +16,6 @@ public class Hotel
 	public FacadeReservation facade;
 	
 	public Hotel(String name) throws WrongParametersException, TooManyClientsException, LessThanZeroClientsException // Constructor
-
-
-	FacadeReservation facade;
-
-	public Hotel(String name) throws Exception
 	{
 		this.Name = name;
 
@@ -28,7 +23,12 @@ public class Hotel
 		reservations = new ArrayList<Reservation>();
 		rooms = new ArrayList<Room>();
 
-		facade = new FacadeReservation(clients, reservations, rooms);
+		try {
+			facade = new FacadeReservation(clients, reservations, rooms);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 
 	}
