@@ -9,6 +9,10 @@ public interface Room
 	public int GetId();
 
 	public int GetCapacity();
+	
+	
+	
+	
 
 	public boolean IsVip();
 }
