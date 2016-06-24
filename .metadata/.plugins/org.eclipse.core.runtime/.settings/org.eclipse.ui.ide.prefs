@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-TASKS_FILTERS_MIGRATE=true
-eclipse.preferences.version=1
-platformState=1455403935006
-=======
 PROBLEMS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
 platformState=1456909185191
->>>>>>> dad7cfae177d62ec1758a8a59a442d51a749a8a5
 quickStart=false
 tipsAndTricks=true
