@@ -1,7 +1,12 @@
 package mpkpk.project.main;
 
 import java.util.ArrayList;
-import mpkpk.project.hotel.*;
+
+import mpkpk.project.*;
+import mpkpk.project.hotel.Client;
+import mpkpk.project.hotel.FacadeReservation;
+import mpkpk.project.hotel.Reservation;
+import mpkpk.project.hotel.Room;
 
 
 public class Hotel
