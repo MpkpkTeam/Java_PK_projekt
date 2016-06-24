@@ -3,6 +3,7 @@ package mpkpk.project.main;
 import java.util.ArrayList;
 import mpkpk.project.hotel.*;
 
+
 public class Hotel
 {
 
@@ -12,9 +13,9 @@ public class Hotel
 	ArrayList<Reservation> reservations; // List of reservations
 	ArrayList<Room> rooms; // List of rooms
 
-	FacadeReservation facade;
-
-	public Hotel(String name) throws Exception
+	public FacadeReservation facade;
+	
+	public Hotel(String name) throws Exception // Constructor
 	{
 		this.Name = name;
 
@@ -23,7 +24,5 @@ public class Hotel
 		rooms = new ArrayList<Room>();
 
 		facade = new FacadeReservation(clients, reservations, rooms);
-
-
 	}
 }

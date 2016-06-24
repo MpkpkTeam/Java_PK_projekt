@@ -2,6 +2,7 @@ package mpkpk.project.hotel;
 
 public class Client
 {
+	
 	private int id;
 	public int getId()
 	{

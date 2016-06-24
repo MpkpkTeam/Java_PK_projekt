@@ -1,0 +1,21 @@
+package booking;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class SearchTicketParametersView extends JPanel{
+	JPanel mainPanel;
+	JLabel headerText;
+	JLabel currencyChoosingText;
+	JLabel classChoosingText;
+	JLabel amountOfTicketsText;
+	
+	public SearchTicketParametersView() {
+		elementsInit();
+	}
+	
+	private void elementsInit(){
+		mainPanel=new JPanel();
+		headerText=new JLabel("Choose")
+	}
+}

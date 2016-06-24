@@ -1,0 +1,28 @@
+package booking;
+
+import javax.swing.JFrame;
+
+import net.miginfocom.swing.MigLayout;
+
+public class OrderDetailsView extends JFrame{
+	JPanel mainPanel;
+	
+	public OrderDetailsView() {
+		
+		
+		
+		
+		pack();
+	}
+	
+	private void elementsConfig(){
+		mainPanel=new JPanel("Details:");
+	}
+	
+	private void layoutConfig(){
+		MigLayout mainFrameLayout=new MigLayout("","[grow,fill]");
+		mainPanel.setLayout(mainFrameLayout);
+		
+	}
+
+}
