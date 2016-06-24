@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
 	<section name="WorkbenchPreferenceDialogSettings">
 <<<<<<< HEAD
 		<item value="491" key="DIALOG_X_ORIGIN"/>
@@ -9,6 +10,8 @@
 		<item value="77" key="DIALOG_Y_ORIGIN"/>
 >>>>>>> dad7cfae177d62ec1758a8a59a442d51a749a8a5
 	</section>
+=======
+>>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="-1" key="dialogHeight"/>
 		<item value="-1" key="dialogWidth"/>
@@ -21,6 +24,7 @@
 		<list key="textArray">
 		</list>
 	</section>
+<<<<<<< HEAD
 	<section name="NewWizardAction">
 <<<<<<< HEAD
 		<item value="org.eclipse.wb.swing.JFrame" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
@@ -41,11 +45,16 @@
 			<item value="org.eclipse.m2e"/>
 		</list>
 	</section>
+=======
+>>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7
 	<section name="ImportExportAction">
 		<item value="org.eclipse.m2e.core.wizards.Maven2ImportWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.m2e"/>
 		</list>
+<<<<<<< HEAD
 >>>>>>> dad7cfae177d62ec1758a8a59a442d51a749a8a5
+=======
+>>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7
 	</section>
 </section>

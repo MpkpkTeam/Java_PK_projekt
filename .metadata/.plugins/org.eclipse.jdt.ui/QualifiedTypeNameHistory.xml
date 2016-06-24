@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <qualifiedTypeNameHistroy>
 <<<<<<< HEAD
 <fullyQualifiedTypeName name="booking.SearchFlightModel"/>
@@ -85,3 +86,6 @@
 <fullyQualifiedTypeName name="mpkpk.project.hotel.Reservation"/>
 >>>>>>> dad7cfae177d62ec1758a8a59a442d51a749a8a5
 </qualifiedTypeNameHistroy>
+=======
+<qualifiedTypeNameHistroy/>
+>>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7

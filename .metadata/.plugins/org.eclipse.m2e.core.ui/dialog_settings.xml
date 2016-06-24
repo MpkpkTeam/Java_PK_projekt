@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
 <<<<<<< HEAD
@@ -79,6 +80,11 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+=======
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\userek\Desktop\repo3"/>
+>>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -89,6 +95,7 @@
 			<item value="[name]"/>
 		</list>
 	</section>
+<<<<<<< HEAD
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
 		</list>
@@ -108,4 +115,6 @@
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
+=======
+>>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7
 </section>
