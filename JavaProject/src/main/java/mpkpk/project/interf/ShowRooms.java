@@ -51,8 +51,7 @@ public class ShowRooms extends JDialog {
 		getContentPane().add(scrollPane, BorderLayout.EAST);
 		this.setResizable(false);
 		this.setVisible(true);
-		
-		
+			
 	}
 
 }

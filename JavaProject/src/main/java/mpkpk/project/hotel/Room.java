@@ -10,9 +10,5 @@ public interface Room
 
 	public int GetCapacity();
 	
-	
-	
-	
-
 	public boolean IsVip();
 }

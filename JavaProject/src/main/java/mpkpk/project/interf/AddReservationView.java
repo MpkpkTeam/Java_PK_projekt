@@ -61,7 +61,7 @@ public class AddReservationView{
 		Addreservation.getContentPane().setLayout(null);
 
 		Addreservation.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		Addreservation.setBounds(100, 100, 723, 487);	
+		Addreservation.setBounds(100, 100, 738, 488);	
 		Addreservation.setVisible(true);
 		Addreservation.setLocationRelativeTo(null);
 		
@@ -212,7 +212,7 @@ public class AddReservationView{
 		panel.setLayout(gl_panel);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(252, 13, 460, 336);
+		panel_1.setBounds(252, 13, 468, 336);
 		Addreservation.getContentPane().add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
@@ -233,7 +233,7 @@ public class AddReservationView{
 		Addreservation.getContentPane().add(btnAddreservation);
 		
 		lblPrice = new JLabel("Price: " + price);
-		lblPrice.setBounds(444, 362, 105, 16);
+		lblPrice.setBounds(441, 362, 122, 16);
 		Addreservation.getContentPane().add(lblPrice);
 		
 		btnCancel = new JButton("Cancel");
