@@ -101,11 +101,12 @@ public class FacadeReservation
 						break;
 					}
 				}
-				DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS", Locale.ENGLISH);
+				DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
 				try
 				{
-					reservations.add(new Reservation(id, df.parse(from), df.parse(to), tempC, tempR));
+					Date werw = df.parse(from);
+					reservations.add(new Reservation(id, werw, df.parse(to), tempC, tempR));
 				}
 				catch (Exception e)
 				{
@@ -124,7 +125,7 @@ public class FacadeReservation
 	{
 		try
 		{
-			DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS:SSS", Locale.ENGLISH);
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 			stat = conn.createStatement();
 
 			String tabelaSQL = "insert into CLIENTS (FIRSTNAME, LASTNAME, PHONE) values( \"" + firstName + "\", \""
@@ -165,7 +166,7 @@ public class FacadeReservation
 	public ArrayList<Room> FindEmptyRooms(Date from, Date to, int capacity) throws Exception
 	{
 		ArrayList<Room> tempRooms = new ArrayList<Room>();
-		DateFormat df = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS:SSS", Locale.ENGLISH);
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
 		try
 		{
@@ -226,13 +227,15 @@ public class FacadeReservation
 
 			int numberOfDays = calculateNumberOfDaysBetween(from, to);
 
-			if (room.IsVip())
-			{
-				return (priceOfOneDay * numberOfDays) * 1.5;
-			}
-			else
-			{
-				return priceOfOneDay * numberOfDays;
+			if(room != null){
+				if (room.IsVip())
+				{
+					return (priceOfOneDay * numberOfDays) * 1.5;
+				}
+				else
+				{
+					return priceOfOneDay * numberOfDays;
+				}
 			}
 		}
 		catch (Exception e)

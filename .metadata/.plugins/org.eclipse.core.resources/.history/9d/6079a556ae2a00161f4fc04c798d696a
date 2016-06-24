@@ -1,0 +1,26 @@
+package booking;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class SearchFlightController {
+	
+	private SearchFlightView view;
+	private SearchFlightModel model;
+
+	public SearchFlightController(SearchFlightView view,SearchFlightModel model) {
+		this.view=view;
+		this.model=model;
+		
+		this.view.addSearchButtonListener(new searchButtonListener());
+	}
+	
+	class searchButtonListener implements ActionListener{
+
+		public void actionPerformed(ActionEvent e) {
+			view.addResult("o");
+		}
+		
+	}
+	
+}
