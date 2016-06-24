@@ -260,11 +260,13 @@ public class AddReservationView{
 	
 	void setFreeRooms(String[][] data){
 		dataModel.setRowCount(0);
+		try{
+			for(int j=0;j<data.length;j++)
+				dataModel.addRow(data[j]);
 		
-		for(int j=0;j<data.length;j++)
-			dataModel.addRow(data[j]);
+			dataModel.fireTableDataChanged();
 		
-		dataModel.fireTableDataChanged();
+		}catch(NullPointerException e){}
 	}
 	
 	void setPrice(double tmp){

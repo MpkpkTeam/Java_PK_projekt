@@ -49,7 +49,8 @@ public class RoomReservationController {
 		
 	}
 	
-	///	2 controllers
+	///open second controller
+	
 	class AddreservationButtonListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e){

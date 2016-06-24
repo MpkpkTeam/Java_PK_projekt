@@ -29,14 +29,12 @@ public class AddReservationController {
 
 			try {
 				Model.CheckFreeRooms(View.comboBox.getSelectedItem().toString(), View.comboBox_1.getSelectedItem().toString(), View.comboBox_2.getSelectedItem().toString(), View.comboBox_3.getSelectedItem().toString(), View.comboBox_4.getSelectedItem().toString(), View.comboBox_5.getSelectedItem().toString(), View.comboBox_6.getSelectedItem().toString());
+				View.setFreeRooms(Model.SetFreeRooms());
 			} catch (NumberFormatException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-				View.setFreeRooms(Model.SetFreeRooms());
 		}
 	}
 	
@@ -65,7 +63,7 @@ public class AddReservationController {
 					e1.printStackTrace();
 				}
 			else
-				err = new Message("Select room and set data first!!!");
+				err = new Message("Select room!!!");
 			
 		}
 	}

@@ -1,11 +1,13 @@
 package mpkpk.project.interf;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.JFrame;
+import javax.xml.parsers.ParserConfigurationException;
 
 import mpkpk.project.hotel.LessThanZeroClientsException;
 import mpkpk.project.hotel.Room;
@@ -62,22 +64,27 @@ public class RoomReservationModel {
 			rooms = hotel.facade.FindEmptyRooms(date_from, date_to, Integer.parseInt(Capacity));
 		else
 			msg = new Message("Please enter correct date first!!!");
-	}
+	
+		}
 	
 	public String[][] SetFreeRooms(){
-		
-		data = new String[rooms.size()][4];
-			
-		int i=0;
-		for(Room r : rooms)
+		try{
+			data = new String[rooms.size()][4];
+				
+			int i=0;
+			for(Room r : rooms)
+			{
+				data[i][0] = Integer.toString(r.GetId());
+				data[i][1] = Integer.toString(r.GetCapacity());
+				if(r.IsVip())
+					data[i][2] = "yes";
+				else
+					data[i][2] = "no";
+				i++;
+			}
+		}catch(NullPointerException e)
 		{
-			data[i][0] = Integer.toString(r.GetId());
-			data[i][1] = Integer.toString(r.GetCapacity());
-			if(r.IsVip())
-				data[i][2] = "yes";
-			else
-				data[i][2] = "no";
-			i++;
+			return null;
 		}
 		return data;
 	}
@@ -92,13 +99,20 @@ public class RoomReservationModel {
 			if(r.GetId() == ID)
 				tmp = r;
 		}
-		if(Name.length() != 0 && Surname.length() != 0 && Phone.length() != 0)
-		{
-			hotel.facade.AddReservation(date_from, date_to, Name, Surname, Integer.parseInt(Phone), Integer.parseInt(Capacity), tmp);
-			msg = new Message("Reservation added for client: " + Surname + " " + Name + " Price: " + price);
+		try{
+			if(Name.length() != 0 && Surname.length() != 0 && Phone.length() != 0 && Phone.length() < 10)
+			{
+				hotel.facade.AddReservation(date_from, date_to, Name, Surname, Integer.parseInt(Phone), Integer.parseInt(Capacity), tmp);
+				msg = new Message("Reservation added for client: " + Surname + " " + Name + " Price: " + price);
+			}
+			else
+				msg = new Message("Set client data first!!!");
 		}
-		else
-			msg = new Message("Set client data first!!!");
+		catch(NumberFormatException e)
+		{
+			msg = new Message("WRONG NUMBER FORMAT!!!");
+		}
+		
 	}
 	public double GetPrice(int NumbRoom){
 		
