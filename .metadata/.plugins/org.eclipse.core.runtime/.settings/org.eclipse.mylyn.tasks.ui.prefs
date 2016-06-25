@@ -1,21 +1,5 @@
 eclipse.preferences.version=1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-migrated.task.repositories.secure.store=true
-org.eclipse.mylyn.tasks.ui.filters.nonmatching=true
-org.eclipse.mylyn.tasks.ui.filters.nonmatching.encouraged=true
-=======
-=======
-migrated.task.repositories.secure.store=true
->>>>>>> dad7cfae177d62ec1758a8a59a442d51a749a8a5
-org.eclipse.mylyn.tasks.ui.filters.nonmatching=true
-org.eclipse.mylyn.tasks.ui.filters.nonmatching.encouraged=true
-org.eclipse.mylyn.tasks.ui.welcome.message=true
->>>>>>> 1131e75bbd86d9c3956043bf9ba2ed6371d09e01
-=======
 migrated.task.repositories.secure.store=true
 org.eclipse.mylyn.tasks.ui.filters.nonmatching=true
 org.eclipse.mylyn.tasks.ui.filters.nonmatching.encouraged=true
 org.eclipse.mylyn.tasks.ui.welcome.message=true
->>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7

@@ -1,31 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<listEntry value="/AirTicketBooking/src/main/java/booking/Main.java"/>
-=======
-<listEntry value="/JavaProject/src/main/java/Main.java"/>
->>>>>>> 1131e75bbd86d9c3956043bf9ba2ed6371d09e01
-=======
 <listEntry value="/JavaProject/src/main/java/mpkpk/project/main/Main.java"/>
->>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="booking.Main"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="AirTicketBooking"/>
-=======
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="Main"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="JavaProject"/>
->>>>>>> 1131e75bbd86d9c3956043bf9ba2ed6371d09e01
-=======
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="mpkpk.project.main.Main"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="JavaProject"/>
->>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>

@@ -3,5 +3,11 @@ Java project repo
 
 Projekt stworzony z wykorzystaniem Mavena
 
+Zostały użyte 3 wzorce projektowe: 
+	dekorator - używany przy tworzeniu pokoi
+	fasada - dostarcza wszystkie metody używane w interfejsie
+	fabryka statyczna - tworzy nowe pokoje
+a także wzorzec architektoniczny MVC.
 
-Zostały użyte 3 wzorce projektowe: dekorator, fasada, fabryka statyczna
+Projekt można uruchomić z linii komend wpisując: mvn package
+
