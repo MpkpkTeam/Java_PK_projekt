@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=2cf2354379517060d20320e89f5f706a405e68d7
+PROBLEMS_FILTERS_MIGRATE=true
 TASKS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
-platformState=1455403935006
-=======
-PROBLEMS_FILTERS_MIGRATE=true
-eclipse.preferences.version=1
-platformState=1456909185191
->>>>>>> dad7cfae177d62ec1758a8a59a442d51a749a8a5
-=======
-PROBLEMS_FILTERS_MIGRATE=true
-eclipse.preferences.version=1
-platformState=1456909185191
->>>>>>> 2cf2354379517060d20320e89f5f706a405e68d7
+platformState=1456944545072
 quickStart=false
 tipsAndTricks=true

@@ -1,8 +1,0 @@
-package booking;
-
-public class TicketFactory {
-	public TicketFactory() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
